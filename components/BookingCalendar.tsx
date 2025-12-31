@@ -62,7 +62,8 @@ export default function BookingCalendar() {
                   <span>090-7383-7799</span>
                 </a>
                 <p className="text-sm text-slate-500 mt-4">
-                  受付時間：8:00〜18:00（年中無休）
+                  受付時間：9:00〜21:00（年中無休）<br />
+                  ※21時以降のご連絡は緊急以外はご遠慮ください
                 </p>
               </div>
 

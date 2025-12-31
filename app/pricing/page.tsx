@@ -133,9 +133,7 @@ export default function PricingPage() {
             </div>
 
             <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy-deep to-slate-500">
-                料金のご案内
-              </span>
+              料金のご案内
             </h1>
 
             <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-orange font-medium">
@@ -242,7 +240,7 @@ export default function PricingPage() {
         {/* Additional Info */}
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20">
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-pop-cyan rounded-2xl p-8">
-            <div className="text-center mb-6">
+            <div className="text-center mb-8">
               <h4 className="text-2xl font-serif font-bold text-navy-deep mb-3">
                 上記以外のコースも承ります
               </h4>
@@ -250,21 +248,6 @@ export default function PricingPage() {
                 お客様のご要望に応じて、カスタムプランのご提案も可能です。<br/>
                 料金や詳細については、お気軽にお問い合わせください。
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-sm text-slate-500 mb-1">最大乗船人数</div>
-                <div className="text-2xl font-bold text-navy-deep">14名</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-sm text-slate-500 mb-1">出船時間</div>
-                <div className="text-xl font-bold text-navy-deep">応相談</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-sm text-slate-500 mb-1">キャンセル</div>
-                <div className="text-sm font-bold text-navy-deep">天候不良時無料</div>
-              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -275,7 +258,7 @@ export default function PricingPage() {
                 お問い合わせ
               </a>
               <a
-                href="/#booking"
+                href="/booking"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-slate-300 text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif rounded-lg"
               >
                 予約カレンダー
@@ -298,7 +281,7 @@ export default function PricingPage() {
 
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
-                href="/#booking"
+                href="/booking"
                 className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-orange hover:bg-orange-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
               >
                 予約カレンダー

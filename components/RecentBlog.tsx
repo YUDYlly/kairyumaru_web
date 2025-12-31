@@ -32,7 +32,7 @@ export default async function RecentBlog() {
             <Newspaper className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-text">
-            最新ブログ
+            釣果情報・お知らせ
           </h2>
         </div>
         <p className="text-text-light mt-4 max-w-2xl mx-auto">
@@ -47,14 +47,23 @@ export default async function RecentBlog() {
             href={`/blog/${post.id}`}
             className="group bg-white border-2 border-soft-dark rounded-lg overflow-hidden hover:border-primary hover:shadow-lg transition-all duration-300"
           >
-            {post.image && (
+            {(post.images?.[0] || post.image) && (
               <div className="relative h-48 bg-soft-dark overflow-hidden">
                 <Image
-                  src={post.image.url}
+                  src={post.images?.[0]?.url || post.image!.url}
                   alt={post.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
+                {/* Multiple Images Indicator */}
+                {post.images && post.images.length > 1 && (
+                  <div className="absolute bottom-4 right-4">
+                    <span className="bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-full">
+                      +{post.images.length - 1}
+                    </span>
+                  </div>
+                )}
               </div>
             )}
 
@@ -89,7 +98,7 @@ export default async function RecentBlog() {
           href="/blog"
           className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
         >
-          ブログ一覧を見る
+          一覧を見る
           <ArrowRight className="w-5 h-5" />
         </Link>
       </div>

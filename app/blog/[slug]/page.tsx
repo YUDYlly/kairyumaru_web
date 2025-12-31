@@ -1,11 +1,14 @@
+'use client'
+
 import { client } from '@/lib/microcms'
 import { BlogPost } from '@/types/blog'
-import { Calendar, Tag, ArrowLeft } from 'lucide-react'
+import { Calendar, Tag, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { useState, useEffect } from 'react'
 
 interface PageProps {
   params: { slug: string }
@@ -19,46 +22,159 @@ const categories: Record<string, { name: string; color: string }> = {
 
 const defaultCategory = { name: 'その他', color: 'bg-gray-500' }
 
-export const revalidate = 60
+// Image Gallery Component
+function ImageGallery({ images }: { images: Array<{ url: string; width?: number; height?: number }> }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
 
-export async function generateStaticParams() {
-  const data = await client.get({
-    endpoint: 'blog',
-    queries: { limit: 100 },
-  })
+  const minSwipeDistance = 50
 
-  return data.contents.map((post: BlogPost) => ({
-    slug: post.id,
-  }))
-}
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
 
-export async function generateMetadata({ params }: PageProps) {
-  try {
-    const post = await client.get({
-      endpoint: 'blog',
-      contentId: params.slug,
-    })
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
 
-    return {
-      title: `${post.title} - 海龍丸ブログ`,
-      description: post.excerpt,
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe && currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1)
     }
-  } catch {
-    return {
-      title: '記事が見つかりません - 海龍丸',
+    if (isRightSwipe && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
     }
   }
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev))
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : prev))
+  }
+
+  if (images.length === 0) return null
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <div
+        className="relative h-64 sm:h-96 bg-white rounded-lg overflow-hidden shadow-xl"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <Image
+          src={images[currentIndex].url}
+          alt={`画像 ${currentIndex + 1}`}
+          fill
+          className="object-contain"
+          priority={currentIndex === 0}
+        />
+
+        {/* Navigation Buttons */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              disabled={currentIndex === 0}
+              className={`absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all ${
+                currentIndex === 0 ? 'opacity-30 cursor-not-allowed' : ''
+              }`}
+              aria-label="前の画像"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={goToNext}
+              disabled={currentIndex === images.length - 1}
+              className={`absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all ${
+                currentIndex === images.length - 1 ? 'opacity-30 cursor-not-allowed' : ''
+              }`}
+              aria-label="次の画像"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </>
+        )}
+
+        {/* Image Counter */}
+        {images.length > 1 && (
+          <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm font-bold px-3 py-1 rounded-full">
+            {currentIndex + 1} / {images.length}
+          </div>
+        )}
+      </div>
+
+      {/* Thumbnail Navigation */}
+      {images.length > 1 && (
+        <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                index === currentIndex ? 'border-primary shadow-lg' : 'border-gray-300 opacity-60 hover:opacity-100'
+              }`}
+            >
+              <Image
+                src={image.url}
+                alt={`サムネイル ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
-  let post: BlogPost
+export default function BlogPostPage({ params }: PageProps) {
+  const [post, setPost] = useState<BlogPost | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
 
-  try {
-    post = await client.get({
-      endpoint: 'blog',
-      contentId: params.slug,
-    })
-  } catch {
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const data = await fetch(`/api/blog/${params.slug}`)
+        if (!data.ok) {
+          throw new Error('Failed to fetch')
+        }
+        const postData = await data.json()
+        setPost(postData)
+      } catch (error) {
+        console.error('Failed to fetch post:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchPost()
+  }, [params.slug])
+
+  if (isLoading) {
+    return (
+      <>
+        <Header />
+        <main className="min-h-screen bg-soft pt-20 flex items-center justify-center">
+          <p className="text-slate-500">読み込み中...</p>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  if (!post) {
     notFound()
   }
 
@@ -116,20 +232,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Featured Image */}
-      {post.image && (
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="relative h-64 sm:h-96 bg-white rounded-lg overflow-hidden shadow-xl">
-            <Image
-              src={post.image.url}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-      )}
+      {/* Featured Image(s) */}
+      {post.images && post.images.length > 0 ? (
+        <ImageGallery images={post.images} />
+      ) : post.image ? (
+        <ImageGallery images={[post.image]} />
+      ) : null}
 
       {/* Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

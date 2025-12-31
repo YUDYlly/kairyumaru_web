@@ -51,8 +51,10 @@ export default function Concept() {
               「星龍丸」との2艇体制
             </h3>
             <p className="text-base text-slate-600 text-center max-w-3xl mx-auto">
-              当遊漁船は、私の師匠でもある、東船長艇「星龍丸」との2艇体制で行っております。
-              どちらかが満席になった場合でもご乗船可能です。
+              当遊漁船は、私の師匠でもある、東船長艇「星龍丸」との2艇体制で行っております。</p>
+              <p className="text-base text-slate-600 text-center max-w-3xl mx-auto">
+              どちらかが満席になった場合でもご乗船可能です。</p>
+              <p className="text-base text-slate-600 text-center max-w-3xl mx-auto">
               お気軽にお問合せ下さい。
             </p>
           </div>

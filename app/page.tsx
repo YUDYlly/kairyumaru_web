@@ -1,13 +1,13 @@
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import WhyChooseUs from '../components/WhyChooseUs'
-import LatestResults from '../components/LatestResults'
 import Concept from '../components/Concept'
 import ShipEquipment from '../components/ShipEquipment'
 import FishingSpots from '../components/FishingSpots'
 import Pricing from '../components/Pricing'
 import TideTable from '../components/TideTable'
 import RecentBlog from '../components/RecentBlog'
+import FAQ from '../components/FAQ'
 import BookingCalendar from '../components/BookingCalendar'
 import Notice from '../components/Notice'
 import Footer from '../components/Footer'
@@ -22,8 +22,8 @@ export default function Home() {
       {/* Why Choose Us - Brand Message */}
       <WhyChooseUs />
 
-      {/* Latest Results - Social Proof */}
-      <LatestResults />
+      {/* Recent Blog - Latest Updates & Fishing Reports */}
+      <RecentBlog />
 
       {/* Concept - Brand Story */}
       <Concept />
@@ -40,8 +40,8 @@ export default function Home() {
       {/* Tide Table - Useful Information */}
       <TideTable />
 
-      {/* Recent Blog - Fresh Content */}
-      <RecentBlog />
+      {/* FAQ - Frequently Asked Questions */}
+      <FAQ />
 
       {/* Booking Calendar - Conversion */}
       <BookingCalendar />

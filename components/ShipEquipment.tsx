@@ -1,32 +1,45 @@
-import { Ship, Zap, Radio, Users, Home } from 'lucide-react'
+import { Ship, Zap, Users, Home, Wind, Coffee } from 'lucide-react'
 import Image from 'next/image'
 import ScrollAnimation from './ScrollAnimation'
 
 const specs = [
   {
     icon: Ship,
-    label: '全長',
-    value: '15.5m',
+    label: '船体サイズ',
+    value: '53フィート',
   },
   {
     icon: Zap,
     label: 'エンジン',
-    value: 'ディーゼル 500馬力',
-  },
-  {
-    icon: Radio,
-    label: '魚探',
-    value: 'フルカラー ソナー完備',
+    value: '720馬力',
   },
   {
     icon: Users,
     label: '最大乗船人数',
-    value: '12名',
+    value: '14名',
+  },
+]
+
+const facilities = [
+  {
+    icon: Wind,
+    label: '冷暖房',
+    description: '夏は涼しく冬は暖かく、キャビンで快適移動',
+  },
+  {
+    icon: Coffee,
+    label: 'ポット・レンジ',
+    description: 'カップ麺や温かい食事を楽しめる',
+  },
+  {
+    icon: Zap,
+    label: 'バッテリー',
+    description: 'バッテリー完備',
   },
   {
     icon: Home,
-    label: '個室トイレ',
-    value: '完備',
+    label: 'ウォシュレット',
+    description: '清潔で快適なウォシュレット付きトイレ',
   },
 ]
 
@@ -34,16 +47,14 @@ export default function ShipEquipment() {
   return (
     <section id="ship" className="relative py-16 md:py-24 bg-white overflow-hidden">
       {/* Background Ship Image - Full Section */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative w-full h-full">
-          <Image
-            src="/images/sections/kairyumaru-ship.jpg"
-            alt="海龍丸"
-            fill
-            className="object-contain opacity-15"
-            sizes="100vw"
-          />
-        </div>
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/images/sections/kairyumaru-ship.jpg"
+          alt="海龍丸"
+          fill
+          className="object-cover opacity-15"
+          sizes="100vw"
+        />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,37 +95,35 @@ export default function ShipEquipment() {
           </div>
         </ScrollAnimation>
 
-        {/* Additional Equipment */}
+        {/* Facilities Grid */}
         <ScrollAnimation delay={400}>
-          <div className="bg-slate-50 border border-slate-200 p-8 rounded-lg">
-            <h3 className="text-xl font-serif font-bold text-navy-deep mb-6 text-center">
-              その他の装備
+          <div className="mt-12">
+            <h3 className="text-2xl font-serif font-bold text-navy-deep mb-6 text-center">
+              快適装備
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-slate-600">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                GPS・レーダー完備
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                ライブウェル完備
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                大型クーラーボックス
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                安全装備一式
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                エサ冷凍庫
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-navy-deep rounded-full"></span>
-                釣り座席（12席）
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {facilities.map((facility, index) => {
+                const Icon = facility.icon
+                return (
+                  <ScrollAnimation key={index} delay={450 + index * 50}>
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-5 border border-slate-200 hover:border-navy-deep/30 hover:shadow-lg hover:bg-white transition-all duration-200">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-navy-deep text-white flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-navy-deep mb-1">
+                            {facility.label}
+                          </h4>
+                          <p className="text-xs text-slate-600">
+                            {facility.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
+                )
+              })}
             </div>
           </div>
         </ScrollAnimation>

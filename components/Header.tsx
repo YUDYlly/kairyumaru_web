@@ -5,14 +5,12 @@ import { Menu, X, Phone } from 'lucide-react'
 import Image from 'next/image'
 
 const navItems = [
-  { label: 'トップ', href: '/' },
-  { label: '釣果情報', href: '#results' },
-  { label: 'ブログ', href: '/blog' },
-  { label: '船体紹介', href: '/ship' },
-  { label: '釣場', href: '/fishing-spots' },
+  { label: '釣果情報・お知らせ', href: '/blog' },
+  { label: '海龍丸', href: '/ship' },
+  { label: '星龍丸', href: '/seiryumaru' },
+  { label: '釣場・潮汐表', href: '/fishing-spots' },
   { label: '料金', href: '/pricing' },
-  { label: '潮汐表', href: '#tide' },
-  { label: '予約状況', href: '#booking' },
+  { label: '予約状況', href: '/booking' },
   { label: 'アクセス', href: '/access' },
 ]
 
@@ -39,17 +37,14 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <a href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/images/logo/logo.png"
+              src="/images/logo/logo_v3.png"
               alt="海龍丸"
-              width={40}
-              height={40}
+              width={160}
+              height={87}
               className="object-contain"
             />
-            <span className="text-xl font-serif font-bold text-text tracking-wide">
-              海龍丸
-            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -60,6 +55,7 @@ export default function Header() {
                 href={item.href}
                 aria-label={`${item.label}セクションへ移動`}
                 className="text-text hover:text-primary transition-colors duration-200 font-medium text-sm"
+                {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
               >
                 {item.label}
               </a>
@@ -111,6 +107,7 @@ export default function Header() {
                   aria-label={`${item.label}セクションへ移動`}
                   className="text-text hover:text-primary transition-colors duration-200 font-medium px-4 py-2 rounded-lg hover:bg-soft"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                 >
                   {item.label}
                 </a>

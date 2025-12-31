@@ -1,5 +1,6 @@
 import { Map, Award, Users, Waves, Compass, Ship } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
+import Image from 'next/image'
 
 export default function WhyChooseUs() {
   const features = [
@@ -36,15 +37,15 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="pt-16 pb-28 md:pt-24 md:pb-36">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollAnimation>
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-deep mb-4">
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-navy-deep mb-6">
               海龍丸の特徴
             </h2>
-            <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto font-bold">
               本格派の釣り人が海龍丸を選ぶ理由
             </p>
           </div>
@@ -56,7 +57,7 @@ export default function WhyChooseUs() {
             const Icon = feature.icon
             return (
               <ScrollAnimation key={index} delay={index * 80}>
-                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:border-navy-deep/30 hover:shadow-lg transition-all duration-200">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:border-navy-deep/30 hover:shadow-lg transition-all duration-200">
                   {/* Icon */}
                   <div className="mb-4">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-navy-deep text-white">
@@ -78,6 +79,7 @@ export default function WhyChooseUs() {
           })}
         </div>
       </div>
+
     </section>
   )
 }

@@ -31,9 +31,7 @@ export default function AccessPage() {
             </div>
 
             <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy-deep to-slate-500">
-                アクセス・乗船場所のご案内
-              </span>
+              アクセス・乗船場所のご案内
             </h1>
 
             <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-blue font-medium">
@@ -94,7 +92,10 @@ export default function AccessPage() {
                         >
                           090-7383-7799
                         </a>
-                        <p className="text-sm text-slate-500">受付時間：8:00〜18:00（年中無休）</p>
+                        <p className="text-sm text-slate-500">
+                          受付時間：9:00〜21:00（年中無休）<br />
+                          <span className="text-xs">※21時以降のご連絡は緊急以外はご遠慮ください</span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -374,7 +375,7 @@ export default function AccessPage() {
 
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
-                href="/#booking"
+                href="/booking"
                 className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-blue hover:bg-sky-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
               >
                 予約カレンダー
