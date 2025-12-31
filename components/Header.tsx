@@ -55,7 +55,6 @@ export default function Header() {
                 href={item.href}
                 aria-label={`${item.label}セクションへ移動`}
                 className="text-text hover:text-primary transition-colors duration-200 font-medium text-sm"
-                {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
               >
                 {item.label}
               </a>
@@ -107,7 +106,6 @@ export default function Header() {
                   aria-label={`${item.label}セクションへ移動`}
                   className="text-text hover:text-primary transition-colors duration-200 font-medium px-4 py-2 rounded-lg hover:bg-soft"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                 >
                   {item.label}
                 </a>
