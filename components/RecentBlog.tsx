@@ -69,11 +69,15 @@ export default async function RecentBlog() {
 
             <div className="p-5">
               <div className="flex items-center gap-2 mb-2">
-                {post.category && (
-                  <span className={`${(categories[post.category] || defaultCategory).color} text-white text-xs font-bold px-2 py-1 rounded`}>
-                    {(categories[post.category] || defaultCategory).name}
-                  </span>
-                )}
+                {post.category && (() => {
+                  const categoryKey = Array.isArray(post.category) ? post.category[0] : post.category
+                  const categoryData = categories[categoryKey] || defaultCategory
+                  return (
+                    <span className={`${categoryData.color} text-white text-xs font-bold px-2 py-1 rounded`}>
+                      {categoryData.name}
+                    </span>
+                  )
+                })()}
               </div>
 
               <h3 className="text-lg font-bold text-text mb-2 group-hover:text-primary transition-colors line-clamp-2">

@@ -195,11 +195,15 @@ export default function BlogPostPage({ params }: PageProps) {
 
           {/* Category Badge */}
           <div className="mb-4">
-            {post.category && (
-              <span className={`${(categories[post.category] || defaultCategory).color} text-white text-sm font-bold px-4 py-2 rounded-full`}>
-                {(categories[post.category] || defaultCategory).name}
-              </span>
-            )}
+            {post.category && (() => {
+              const categoryKey = Array.isArray(post.category) ? post.category[0] : post.category
+              const categoryData = categories[categoryKey] || defaultCategory
+              return (
+                <span className={`${categoryData.color} text-white text-sm font-bold px-4 py-2 rounded-full`}>
+                  {categoryData.name}
+                </span>
+              )
+            })()}
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-4">
