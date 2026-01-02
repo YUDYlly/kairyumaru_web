@@ -1,8 +1,43 @@
-import { Map, Award, Users, Waves, Compass, Ship } from 'lucide-react'
+'use client'
+
+import { Map, Award, Users, Waves, Compass, Ship, ChevronLeft, ChevronRight } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
-import Image from 'next/image'
+import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function WhyChooseUs() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    skipSnaps: false,
+    breakpoints: {
+      '(min-width: 768px)': { active: false }
+    }
+  })
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+  }, [emblaApi, onSelect])
   const features = [
     {
       icon: Map,
@@ -51,32 +86,82 @@ export default function WhyChooseUs() {
           </div>
         </ScrollAnimation>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <ScrollAnimation key={index} delay={index * 80}>
-                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:border-navy-deep/30 hover:shadow-lg transition-all duration-200">
-                  {/* Icon */}
-                  <div className="mb-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-navy-deep text-white">
-                      <Icon className="w-6 h-6" />
+        {/* Mobile Carousel & Desktop Grid */}
+        <div className="relative">
+          {/* Mobile: Carousel */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-4">
+                {features.map((feature, index) => {
+                  const Icon = feature.icon
+                  return (
+                    <div key={index} className="flex-[0_0_85%] min-w-0">
+                      <div className="bg-white rounded-lg p-6 border border-slate-200 h-full">
+                        <div className="mb-4">
+                          <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-ocean-blue text-white">
+                            <Icon className="w-6 h-6" />
+                          </div>
+                        </div>
+                        <h3 className="text-lg font-bold text-navy-deep mb-3">
+                          {feature.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Carousel Controls */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <button
+                onClick={scrollPrev}
+                disabled={!canScrollPrev}
+                className="p-2 rounded-full bg-white border border-slate-200 disabled:opacity-30 hover:bg-ocean-blue hover:text-white hover:border-ocean-blue transition-all"
+                aria-label="前へ"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="text-sm text-slate-500 font-mono">
+                スワイプで操作
+              </div>
+              <button
+                onClick={scrollNext}
+                disabled={!canScrollNext}
+                className="p-2 rounded-full bg-white border border-slate-200 disabled:opacity-30 hover:bg-ocean-blue hover:text-white hover:border-ocean-blue transition-all"
+                aria-label="次へ"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <ScrollAnimation key={index} delay={index * 80}>
+                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:border-ocean-blue/50 hover:shadow-lg transition-all duration-200">
+                    <div className="mb-4">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-ocean-blue text-white">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-navy-deep mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-navy-deep mb-3">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
-            )
-          })}
+                </ScrollAnimation>
+              )
+            })}
+          </div>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
-import { Ship, Zap, Users, Home, Wind, Coffee } from 'lucide-react'
+import { Ship, Zap, Users, Home, Wind, Coffee, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import ScrollAnimation from './ScrollAnimation'
 
 const specs = [
@@ -125,6 +126,19 @@ export default function ShipEquipment() {
                 )
               })}
             </div>
+          </div>
+        </ScrollAnimation>
+
+        {/* CTA Button */}
+        <ScrollAnimation delay={700}>
+          <div className="text-center mt-12">
+            <Link
+              href="/ship"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-navy-deep text-white font-bold rounded-lg hover:bg-navy-base transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              詳しく見る
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </ScrollAnimation>
       </div>

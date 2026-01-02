@@ -1,5 +1,9 @@
-import { MapPin, Anchor } from 'lucide-react'
+'use client'
+
+import { MapPin, Anchor, ChevronLeft, ChevronRight } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
+import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect, useState } from 'react'
 
 interface FishingSpot {
   name: string
@@ -36,6 +40,38 @@ const spots: FishingSpot[] = [
 ]
 
 export default function FishingSpots() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    breakpoints: {
+      '(min-width: 768px)': { active: false }
+    }
+  })
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+  }, [emblaApi, onSelect])
+
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,46 +87,108 @@ export default function FishingSpots() {
           </div>
         </ScrollAnimation>
 
-        {/* Fishing Spots Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {spots.map((spot, index) => (
-            <ScrollAnimation key={index} delay={index * 80}>
-              <div className="bg-white border border-slate-200 rounded-lg p-6 hover:border-navy-deep/30 hover:shadow-lg transition-all duration-200">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-serif font-bold text-navy-deep mb-2">
-                      {spot.name}
-                    </h3>
-                    <p className="text-sm text-slate-600 mb-3">
-                      {spot.description}
-                    </p>
+        {/* Mobile Carousel & Desktop Grid */}
+        <div className="relative mb-8">
+          {/* Mobile: Carousel */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-4">
+                {spots.map((spot, index) => (
+                  <div key={index} className="flex-[0_0_90%] min-w-0">
+                    <div className="bg-white border border-slate-200 rounded-lg p-6 h-full">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-lg font-serif font-bold text-navy-deep mb-2">
+                            {spot.name}
+                          </h3>
+                          <p className="text-sm text-slate-600 mb-3">
+                            {spot.description}
+                          </p>
+                        </div>
+                        <div className="w-10 h-10 rounded-lg bg-ocean-blue/10 flex items-center justify-center text-ocean-blue flex-shrink-0 ml-3">
+                          <Anchor className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 mb-3 text-sm text-slate-600">
+                        <MapPin className="w-4 h-4" />
+                        <span>港から {spot.distance}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {spot.targetFish.map((fish, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-1 bg-ocean-blue/10 text-ocean-dark text-xs font-bold rounded"
+                          >
+                            {fish}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-12 h-12 rounded-lg bg-navy-deep/10 flex items-center justify-center text-navy-deep flex-shrink-0 ml-4">
-                    <Anchor className="w-6 h-6" />
-                  </div>
-                </div>
-
-                {/* Distance */}
-                <div className="flex items-center gap-2 mb-3 text-sm text-slate-600">
-                  <MapPin className="w-4 h-4" />
-                  <span>港から {spot.distance}</span>
-                </div>
-
-                {/* Target Fish */}
-                <div className="flex flex-wrap gap-1">
-                  {spot.targetFish.map((fish, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-slate-100 text-navy-deep text-xs font-bold rounded border border-slate-200"
-                    >
-                      {fish}
-                    </span>
-                  ))}
-                </div>
+                ))}
               </div>
-            </ScrollAnimation>
-          ))}
+            </div>
+
+            {/* Carousel Controls */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <button
+                onClick={scrollPrev}
+                disabled={!canScrollPrev}
+                className="p-2 rounded-full bg-white border border-slate-200 disabled:opacity-30 hover:bg-ocean-blue hover:text-white hover:border-ocean-blue transition-all"
+                aria-label="前へ"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="text-sm text-slate-500 font-mono">
+                スワイプで操作
+              </div>
+              <button
+                onClick={scrollNext}
+                disabled={!canScrollNext}
+                className="p-2 rounded-full bg-white border border-slate-200 disabled:opacity-30 hover:bg-ocean-blue hover:text-white hover:border-ocean-blue transition-all"
+                aria-label="次へ"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid grid-cols-2 gap-6">
+            {spots.map((spot, index) => (
+              <ScrollAnimation key={index} delay={index * 80}>
+                <div className="bg-white border border-slate-200 rounded-lg p-6 hover:border-ocean-blue/50 hover:shadow-lg transition-all duration-200">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-serif font-bold text-navy-deep mb-2">
+                        {spot.name}
+                      </h3>
+                      <p className="text-sm text-slate-600 mb-3">
+                        {spot.description}
+                      </p>
+                    </div>
+                    <div className="w-12 h-12 rounded-lg bg-ocean-blue/10 flex items-center justify-center text-ocean-blue flex-shrink-0 ml-4">
+                      <Anchor className="w-6 h-6" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mb-3 text-sm text-slate-600">
+                    <MapPin className="w-4 h-4" />
+                    <span>港から {spot.distance}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {spot.targetFish.map((fish, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-1 bg-ocean-blue/10 text-ocean-dark text-xs font-bold rounded"
+                      >
+                        {fish}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
         </div>
 
         {/* Additional Info */}

@@ -13,37 +13,42 @@ module.exports = {
           light: '#ef4444',   // red-500
           dark: '#991b1b',    // red-800
         },
+        'ocean-blue': '#0369a1',  // sky-700 - 深い海の青
+        'ocean-light': '#0284c7', // sky-600 - 明るい海の青
+        'ocean-dark': '#075985',  // sky-800 - より深い海の青
         'pop-blue': '#0ea5e9',    // sky-500
         'pop-cyan': '#06b6d4',    // cyan-500
         'pop-orange': '#f97316',  // orange-500
         'pop-yellow': '#eab308',  // yellow-500
-        'navy-deep': '#0f172a',   // slate-900
-        'navy-base': '#1e293b',   // slate-800
-        'navy-card': '#334155',   // slate-700
-        'slate-body': '#f8fafc',  // slate-50
-        'slate-text': '#1e293b',  // slate-800
+        'navy-deep': '#0c4a6e',   // sky-900 - 深い紺色（青寄り）
+        'navy-base': '#075985',   // sky-800 - 紺色ベース（青寄り）
+        'navy-card': '#0369a1',   // sky-700 - カード背景（青寄り）
+        'slate-body': '#f0f9ff',  // sky-50 - 薄い青みのある背景
+        'slate-text': '#0c4a6e',  // sky-900 - テキスト（青寄り）
         'slate-muted': '#64748b', // slate-500
         'accent-silver': '#94a3b8', // slate-400
         accent: {
+          blue: '#3b82f6',        // blue-500 - 鮮やかな青
+          blueLight: '#60a5fa',   // blue-400 - 明るい青
           yellow: '#fbbf24',      // amber-400
           orange: '#fb923c',      // orange-400
           yellowLight: '#fde68a', // amber-200
           orangeLight: '#fed7aa', // orange-200
         },
         soft: {
-          DEFAULT: '#eff6ff',  // blue-50
-          light: '#ffffff',
-          dark: '#dbeafe',     // blue-100
+          DEFAULT: '#e0f2fe',  // sky-100 - 柔らかい青
+          light: '#f0f9ff',    // sky-50 - とても薄い青
+          dark: '#bae6fd',     // sky-200 - 少し濃い青
         },
         text: {
-          DEFAULT: '#1e3a8a',  // blue-900
+          DEFAULT: '#0c4a6e',  // sky-900 - 深い青
           light: '#64748b',    // slate-500
-          dark: '#0f172a',     // slate-950
+          dark: '#082f49',     // sky-950 - 最も深い青
         },
       },
       fontFamily: {
-        serif: ['Noto Serif JP', 'serif'],
-        sans: ['Noto Sans JP', 'sans-serif'],
+        serif: ['var(--font-noto-serif)', 'serif'],
+        sans: ['var(--font-noto-sans)', 'sans-serif'],
       },
       borderRadius: {
         'xl': '1rem',
