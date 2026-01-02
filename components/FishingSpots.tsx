@@ -42,7 +42,7 @@ const spots: FishingSpot[] = [
 export default function FishingSpots() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'start',
+    align: 'center',
     breakpoints: {
       '(min-width: 768px)': { active: false }
     }
@@ -91,8 +91,8 @@ export default function FishingSpots() {
         <div className="relative mb-8">
           {/* Mobile: Carousel */}
           <div className="md:hidden">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-4">
+            <div className="overflow-hidden -mx-4" ref={emblaRef}>
+              <div className="flex gap-4 px-4">
                 {spots.map((spot, index) => (
                   <div key={index} className="flex-[0_0_90%] min-w-0">
                     <div className="bg-white border border-slate-200 rounded-lg p-6 h-full">

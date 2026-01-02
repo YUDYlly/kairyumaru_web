@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from 'react'
 export default function WhyChooseUs() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'start',
+    align: 'center',
     skipSnaps: false,
     breakpoints: {
       '(min-width: 768px)': { active: false }
@@ -90,8 +90,8 @@ export default function WhyChooseUs() {
         <div className="relative">
           {/* Mobile: Carousel */}
           <div className="md:hidden">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-4">
+            <div className="overflow-hidden -mx-4" ref={emblaRef}>
+              <div className="flex gap-4 px-4">
                 {features.map((feature, index) => {
                   const Icon = feature.icon
                   return (
