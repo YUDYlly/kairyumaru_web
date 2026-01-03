@@ -61,33 +61,36 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Phone Number - Desktop */}
-          <a
-            href="tel:09073837799"
-            className="hidden md:flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
-            aria-label="電話で予約"
-          >
-            <Phone className="w-5 h-5" />
-            <span className="font-bold text-lg">090-7383-7799</span>
-          </a>
+          {/* Right Side - Phone & Menu Button */}
+          <div className="flex items-center gap-4">
+            {/* Phone Number - Desktop */}
+            <a
+              href="tel:09073837799"
+              className="hidden lg:flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
+              aria-label="電話で予約"
+            >
+              <Phone className="w-5 h-5" />
+              <span className="font-bold text-lg">090-7383-7799</span>
+            </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-text hover:text-primary transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="メニュー"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-text hover:text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="メニュー"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-6 border-t border-soft-dark mt-4 pt-4 bg-white rounded-b-2xl shadow-lg">
+          <div className="lg:hidden pb-6 border-t border-soft-dark mt-4 pt-4 bg-white rounded-b-2xl shadow-lg">
             {/* Phone Number - Mobile */}
             <a
               href="tel:09073837799"
