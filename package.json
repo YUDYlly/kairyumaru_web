@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "docx": "^9.5.1",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.400.0",
     "microcms-js-sdk": "^3.2.0",
