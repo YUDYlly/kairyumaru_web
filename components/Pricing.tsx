@@ -148,7 +148,7 @@ export default function Pricing() {
         {/* Section Header */}
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-white mb-6 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-thin text-white mb-6 drop-shadow-lg">
               料金のご案内
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow">
@@ -178,7 +178,7 @@ export default function Pricing() {
                               <div className="text-xs font-mono text-slate-muted mb-1 uppercase tracking-wider">
                                 {plan.nameEn}
                               </div>
-                              <h3 className="text-xl font-serif font-light text-navy-deep">
+                              <h3 className="text-xl font-serif font-thin text-navy-deep">
                                 {plan.name}
                               </h3>
                             </div>
@@ -189,7 +189,7 @@ export default function Pricing() {
 
                           {/* Price */}
                           <div className="mb-4 pb-4 border-b border-slate-200">
-                            <div className="text-2xl font-light bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
+                            <div className="text-2xl font-thin bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
                               {plan.priceRange}
                             </div>
                             <p className="text-sm text-slate-muted leading-relaxed">{plan.description}</p>
@@ -266,7 +266,7 @@ export default function Pricing() {
                           <div className="text-xs font-mono text-slate-muted mb-2 uppercase tracking-wider">
                             {plan.nameEn}
                           </div>
-                          <h3 className="text-2xl font-serif font-light text-navy-deep">
+                          <h3 className="text-2xl font-serif font-thin text-navy-deep">
                             {plan.name}
                           </h3>
                         </div>
@@ -277,7 +277,7 @@ export default function Pricing() {
 
                       {/* Price */}
                       <div className="mb-5 pb-5 border-b border-slate-200">
-                        <div className="text-3xl font-light bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
+                        <div className="text-3xl font-thin bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
                           {plan.priceRange}
                         </div>
                         <p className="text-sm text-slate-muted leading-relaxed">{plan.description}</p>
@@ -340,7 +340,7 @@ export default function Pricing() {
               <div>
                 <a
                   href="/pricing"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-light rounded-xl hover:bg-blue-50 hover:scale-105 hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-thin rounded-xl hover:bg-blue-50 hover:scale-105 hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] transition-all duration-300"
                 >
                   料金詳細を見る
                 </a>

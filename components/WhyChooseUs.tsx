@@ -112,10 +112,10 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-light text-white mb-6 drop-shadow-md">
+            <h2 className="text-3xl md:text-5xl font-serif font-thin text-white mb-6 drop-shadow-md">
               海龍丸の特徴
             </h2>
-            <p className="text-lg md:text-xl text-white/90 font-light tracking-wide">
+            <p className="text-lg md:text-xl text-white/90 font-thin tracking-wide">
               本格派の釣り人が海龍丸を選ぶ理由
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
                               <Icon className="w-7 h-7" />
                             </div>
                           </div>
-                          <h3 className="text-lg font-light text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                          <h3 className="text-lg font-thin text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
                             {feature.title}
                           </h3>
                           <p className="text-white/80 text-sm leading-relaxed">
@@ -195,7 +195,7 @@ export default function WhyChooseUs() {
                           <Icon className="w-8 h-8" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-light text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
+                      <h3 className="text-xl font-thin text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
                         {feature.title}
                       </h3>
                       <p className="text-white/80 leading-relaxed">

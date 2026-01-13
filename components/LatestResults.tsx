@@ -59,7 +59,7 @@ export default function LatestResults() {
   return (
     <section id="results" className="section-container bg-soft">
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-text mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-thin text-text mb-4">
           最新の釣果
         </h2>
         <p className="text-text-light mt-4 max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ export default function LatestResults() {
               </div>
 
               <div className="mb-4">
-                <h3 className="text-2xl font-serif font-light text-text mb-2">
+                <h3 className="text-2xl font-serif font-thin text-text mb-2">
                   {result.fish}
                 </h3>
                 <div className="flex items-center text-text-light">

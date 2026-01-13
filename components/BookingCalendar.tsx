@@ -56,7 +56,7 @@ export default function BookingCalendar() {
 
             <div className="relative max-w-2xl mx-auto">
               <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-navy-deep mb-4">
+                <h3 className="text-2xl md:text-3xl font-serif font-thin text-navy-deep mb-4">
                   お電話でのご予約
                 </h3>
                 <p className="text-slate-muted text-lg">
@@ -68,7 +68,7 @@ export default function BookingCalendar() {
               <div className="text-center mb-10">
                 <a
                   href="tel:09073837799"
-                  className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl md:text-2xl rounded-2xl hover:shadow-[0_8px_30px_rgba(26,58,92,0.4)] transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                  className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-gradient-to-r from-primary to-primary-light text-white font-thin text-xl md:text-2xl rounded-2xl hover:shadow-[0_8px_30px_rgba(26,58,92,0.4)] transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                   aria-label="電話で予約"
                 >
                   <Phone className="w-7 h-7 group-hover:animate-pulse" />

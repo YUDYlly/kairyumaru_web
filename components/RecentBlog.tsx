@@ -41,7 +41,7 @@ export default async function RecentBlog() {
       </div>
 
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-deep mb-4">
+        <h2 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep mb-4">
           釣果情報・お知らせ
         </h2>
         <p className="text-lg text-slate-muted mt-4 max-w-2xl mx-auto">
@@ -89,7 +89,7 @@ export default async function RecentBlog() {
                 })()}
               </div>
 
-              <h3 className="text-lg font-bold text-navy-deep mb-2 group-hover:text-ocean-blue transition-colors line-clamp-2">
+              <h3 className="text-lg font-thin text-navy-deep mb-2 group-hover:text-ocean-blue transition-colors line-clamp-2">
                 {post.title}
               </h3>
 
@@ -109,7 +109,7 @@ export default async function RecentBlog() {
       <div className="text-center">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-soft"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-thin rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-soft"
         >
           一覧を見る
           <ArrowRight className="w-4 h-4" />

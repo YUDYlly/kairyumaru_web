@@ -9,7 +9,7 @@ export default function Notice() {
             <div className="mb-3 text-primary">
               <Info className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-navy-deep mb-2">
+            <h3 className="text-xl font-thin text-navy-deep mb-2">
               お客様へお願い
             </h3>
             <p className="text-slate-600 font-medium">

@@ -98,7 +98,7 @@ export default function FAQ() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-light text-navy-deep mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep mb-4">
               よくあるご質問
             </h2>
             <p className="text-lg text-slate-muted">
@@ -118,7 +118,7 @@ export default function FAQ() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-light text-navy-deep mb-2 text-base md:text-lg">
+                    <h3 className="font-thin text-navy-deep mb-2 text-base md:text-lg">
                       {faq.question}
                     </h3>
                     <p className="text-slate-muted text-sm md:text-base leading-relaxed">
@@ -139,7 +139,7 @@ export default function FAQ() {
             </p>
             <a
               href="tel:09073837799"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-light rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-soft"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-thin rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-soft"
             >
               <Phone className="w-5 h-5" />
               <span>090-7383-7799</span>

@@ -105,10 +105,10 @@ export default function FishingSpots() {
         {/* Section Header */}
         <ScrollAnimation>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-serif font-light text-white mb-6 drop-shadow-md">
+            <h2 className="text-3xl md:text-5xl font-serif font-thin text-white mb-6 drop-shadow-md">
               釣り場のご案内
             </h2>
-            <p className="text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 font-thin max-w-2xl mx-auto">
               玄界灘の一級ポイントへご案内
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function FishingSpots() {
                     <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 h-full shadow-lg">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
-                          <h3 className="text-lg font-serif font-light text-white mb-2">
+                          <h3 className="text-lg font-serif font-thin text-white mb-2">
                             {spot.name}
                           </h3>
                           <p className="text-sm text-white/80 mb-3">
@@ -187,7 +187,7 @@ export default function FishingSpots() {
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:border-white/50 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-serif font-light text-white mb-2 group-hover:text-accent-gold transition-colors">
+                      <h3 className="text-2xl font-serif font-thin text-white mb-2 group-hover:text-accent-gold transition-colors">
                         {spot.name}
                       </h3>
                       <p className="text-white/80 mb-3 text-base leading-relaxed">
@@ -227,7 +227,7 @@ export default function FishingSpots() {
             </p>
             <a
               href="/fishing-spots"
-              className="group inline-flex items-center justify-center px-10 py-4 bg-white text-ocean-blue font-light rounded-xl hover:shadow-glow transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center px-10 py-4 bg-white text-ocean-blue font-thin rounded-xl hover:shadow-glow transition-all duration-300 hover:scale-105"
             >
               詳細はこちら
               <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

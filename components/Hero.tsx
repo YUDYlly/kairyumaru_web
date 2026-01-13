@@ -72,10 +72,10 @@ export default function Hero() {
             className={`text-center transform transition-all duration-1500 delay-300 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
-            <p className="text-white/90 text-xl md:text-2xl lg:text-3xl font-serif font-light tracking-wide mb-3 hero-text-shadow">
+            <p className="text-white/90 text-xl md:text-2xl lg:text-3xl font-serif font-thin tracking-wide mb-3 hero-text-shadow">
               玄界灘の大海原へ
             </p>
-            <p className="text-blue-200/80 text-base md:text-lg font-sans font-light tracking-wider hero-text-shadow">
+            <p className="text-blue-200/80 text-base md:text-lg font-sans font-thin tracking-wider hero-text-shadow">
               53フィート・720馬力の高速船で、究極の釣り体験を
             </p>
           </div>
@@ -87,14 +87,14 @@ export default function Hero() {
           >
             <a
               href="#booking"
-              className="group relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-light rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] overflow-hidden text-center"
+              className="group relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-thin rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] overflow-hidden text-center"
             >
               <span className="relative z-10">予約カレンダー</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a
               href="#pricing"
-              className="group flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-light rounded-full transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] text-center"
+              className="group flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-thin rounded-full transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] text-center"
             >
               料金を見る
             </a>
