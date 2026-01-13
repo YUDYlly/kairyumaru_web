@@ -59,14 +59,9 @@ export default function LatestResults() {
   return (
     <section id="results" className="section-container bg-soft">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center mb-4">
-          <div className="p-2 bg-gradient-to-br from-accent-orange to-accent-yellow rounded-lg mr-3">
-            <Fish className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-text">
-            最新の釣果
-          </h2>
-        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-text mb-4">
+          最新の釣果
+        </h2>
         <p className="text-text-light mt-4 max-w-2xl mx-auto">
           経験を積んだ釣り人たちの実績をご覧ください
         </p>
@@ -76,37 +71,37 @@ export default function LatestResults() {
         {results.map((result, index) => (
           <ScrollAnimation key={index} delay={index * 100}>
             <div className="card overflow-hidden">
-            {/* Image */}
-            <div className="relative w-full h-48 mb-4 rounded overflow-hidden">
-              <Image
-                src={result.image}
-                alt={`${result.fish} ${result.size}`}
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-            </div>
-            
-            <div className="flex items-center justify-between mb-4 pb-4 border-b border-soft-dark">
-              <div className="flex items-center text-text-light">
-                <Calendar className="w-4 h-4 mr-2 text-accent-orange" />
-                <span className="text-sm font-medium">{result.date}</span>
+              {/* Image */}
+              <div className="relative w-full h-48 mb-4 rounded overflow-hidden">
+                <Image
+                  src={result.image}
+                  alt={`${result.fish} ${result.size}`}
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
               </div>
-            </div>
-            
-            <div className="mb-4">
-              <h3 className="text-2xl font-serif font-bold text-text mb-2">
-                {result.fish}
-              </h3>
-              <div className="flex items-center text-text-light">
-                <Ruler className="w-4 h-4 mr-2 text-accent-yellow" />
-                <span className="font-medium">{result.size}</span>
+
+              <div className="flex items-center justify-between mb-4 pb-4 border-b border-soft-dark">
+                <div className="flex items-center text-text-light">
+                  <Calendar className="w-4 h-4 mr-2 text-accent-orange" />
+                  <span className="text-sm font-medium">{result.date}</span>
+                </div>
               </div>
-            </div>
-            
-            <p className="text-text-light text-sm leading-relaxed">
-              {result.comment}
-            </p>
+
+              <div className="mb-4">
+                <h3 className="text-2xl font-serif font-light text-text mb-2">
+                  {result.fish}
+                </h3>
+                <div className="flex items-center text-text-light">
+                  <Ruler className="w-4 h-4 mr-2 text-accent-yellow" />
+                  <span className="font-medium">{result.size}</span>
+                </div>
+              </div>
+
+              <p className="text-text-light text-sm leading-relaxed">
+                {result.comment}
+              </p>
             </div>
           </ScrollAnimation>
         ))}

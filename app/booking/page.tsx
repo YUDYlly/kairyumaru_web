@@ -96,7 +96,7 @@ export default function BookingPage() {
             <div className="mt-8 pt-6 border-t border-slate-200 text-center">
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center justify-center px-8 py-4 bg-pop-blue text-white font-bold text-lg rounded-lg hover:bg-sky-400 transition-all shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 電話で予約する
               </a>
@@ -119,14 +119,14 @@ export default function BookingPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="tel:09073837799"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-blue hover:bg-sky-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 090-7383-7799
               </a>
 
               <a
                 href="/fishing-spots"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-slate-300 bg-white text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 釣り場を見る
               </a>

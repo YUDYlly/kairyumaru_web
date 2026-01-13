@@ -2,21 +2,19 @@ import { Info } from 'lucide-react'
 
 export default function Notice() {
   return (
-    <section className="section-container bg-soft border-t border-soft-dark">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white border-2 border-accent-yellow p-6 rounded-2xl shadow-lg">
-          <div className="flex items-start">
-            <div className="p-2 bg-gradient-to-br from-accent-orange to-accent-yellow rounded-lg mr-4 flex-shrink-0">
-              <Info className="w-6 h-6 text-white" />
+    <section className="bg-white py-12 md:py-16 border-t border-slate-100">
+      <div className="max-w-3xl mx-auto px-4">
+        <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl shadow-sm">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-3 text-primary">
+              <Info className="w-6 h-6" />
             </div>
-            <div>
-              <h3 className="text-xl font-serif font-bold text-text mb-3">
-                お客様へお願い
-              </h3>
-              <p className="text-text-light">
-                ごみは各自お持ち帰り下さい。
-              </p>
-            </div>
+            <h3 className="text-xl font-bold text-navy-deep mb-2">
+              お客様へお願い
+            </h3>
+            <p className="text-slate-600 font-medium">
+              ごみは各自お持ち帰り下さい。
+            </p>
           </div>
         </div>
       </div>

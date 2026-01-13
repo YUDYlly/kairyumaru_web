@@ -56,12 +56,14 @@ export default function ShipEquipment() {
           className="object-cover opacity-15"
           sizes="100vw"
         />
+        {/* Gradient overlays to fade the image at edges */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-deep mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-navy-deep mb-4">
               船体・装備
             </h2>
             <p className="text-base md:text-lg text-slate-600">
@@ -86,7 +88,7 @@ export default function ShipEquipment() {
                         {spec.label}
                       </div>
                     </div>
-                    <div className="text-base font-bold text-navy-deep">
+                    <div className="text-base font-light text-navy-deep">
                       {spec.value}
                     </div>
                   </div>
@@ -99,7 +101,7 @@ export default function ShipEquipment() {
         {/* Facilities Grid */}
         <ScrollAnimation delay={400}>
           <div className="mt-12">
-            <h3 className="text-2xl font-serif font-bold text-navy-deep mb-6 text-center">
+            <h3 className="text-2xl font-serif font-light text-navy-deep mb-6 text-center">
               快適装備
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
@@ -113,7 +115,7 @@ export default function ShipEquipment() {
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-navy-deep mb-1">
+                          <h4 className="font-light text-navy-deep mb-1">
                             {facility.label}
                           </h4>
                           <p className="text-xs text-slate-600">
@@ -134,7 +136,7 @@ export default function ShipEquipment() {
           <div className="text-center mt-12">
             <Link
               href="/ship"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-navy-deep text-white font-bold rounded-lg hover:bg-navy-base transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-navy-deep text-white font-light rounded-lg hover:bg-navy-base transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               詳しく見る
               <ArrowRight className="w-5 h-5" />

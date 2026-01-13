@@ -8,7 +8,7 @@ const navItems = [
   { label: '釣果情報・お知らせ', href: '/blog' },
   { label: '海龍丸', href: '/ship' },
   { label: '星龍丸', href: '/seiryumaru' },
-  { label: '釣場・潮汐表', href: '/fishing-spots' },
+  { label: '釣場', href: '/fishing-spots' },
   { label: '料金', href: '/pricing' },
   { label: '予約状況', href: '/booking' },
   { label: 'アクセス', href: '/access' },
@@ -30,8 +30,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-soft-dark shadow-lg'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-white/98 backdrop-blur-md shadow-soft'
+          : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-label={`${item.label}セクションへ移動`}
-                className="text-text hover:text-primary transition-colors duration-200 font-medium text-sm"
+                className="text-navy-deep hover:text-ocean-blue transition-colors duration-200 font-medium text-sm"
               >
                 {item.label}
               </a>
@@ -66,16 +66,16 @@ export default function Header() {
             {/* Phone Number - Desktop */}
             <a
               href="tel:09073837799"
-              className="hidden lg:flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
+              className="hidden lg:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-soft"
               aria-label="電話で予約"
             >
-              <Phone className="w-5 h-5" />
-              <span className="font-bold text-lg">090-7383-7799</span>
+              <Phone className="w-4 h-4" />
+              <span className="font-bold">090-7383-7799</span>
             </a>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-text hover:text-primary transition-colors"
+              className="lg:hidden text-navy-deep hover:text-ocean-blue transition-colors p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="メニュー"
             >
@@ -90,24 +90,24 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden pb-6 border-t border-soft-dark mt-4 pt-4 bg-white rounded-b-2xl shadow-lg">
+          <div className="lg:hidden pb-6 border-t border-slate-200 mt-4 pt-4">
             {/* Phone Number - Mobile */}
             <a
               href="tel:09073837799"
-              className="flex items-center justify-center gap-2 bg-primary text-white px-6 py-4 rounded-lg mx-4 mb-4 hover:bg-primary-dark transition-all duration-300 shadow-md"
+              className="flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-lg mx-4 mb-4 hover:bg-primary-dark transition-all duration-300"
               aria-label="電話で予約"
             >
-              <Phone className="w-5 h-5" />
-              <span className="font-bold text-lg">090-7383-7799</span>
+              <Phone className="w-4 h-4" />
+              <span className="font-bold">090-7383-7799</span>
             </a>
 
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   aria-label={`${item.label}セクションへ移動`}
-                  className="text-text hover:text-primary transition-colors duration-200 font-medium px-4 py-2 rounded-lg hover:bg-soft"
+                  className="text-navy-deep hover:text-ocean-blue hover:bg-soft-light transition-all duration-200 font-medium px-4 py-3 rounded-lg mx-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -120,4 +120,3 @@ export default function Header() {
     </header>
   )
 }
-
