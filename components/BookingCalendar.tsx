@@ -3,15 +3,16 @@ import ScrollAnimation from './ScrollAnimation'
 
 export default function BookingCalendar() {
   return (
-    <section id="booking" className="relative py-20 md:py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
-      {/* Decorative Elements */}
+    <section id="booking" className="relative py-20 md:py-32 bg-slate-body overflow-hidden">
+      {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float-rotate"></div>
+        {/* Blurred background orbs - neutral white shadow effect */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gray-100/50 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-100/40 rounded-full blur-3xl animate-float-rotate"></div>
 
-        {/* Floating circles */}
-        <div className="absolute top-1/4 right-1/3 w-48 h-48 rounded-full border border-blue-500/10 animate-float-rotate"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full border border-primary/10 animate-float" style={{ animationDelay: '1s' }}></div>
+        {/* Ripple effects */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-gray-200/50 animate-ripple"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full border border-gray-200/40 animate-ripple" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,9 +51,10 @@ export default function BookingCalendar() {
 
         {/* Contact Section */}
         <ScrollAnimation delay={200}>
-          <div className="relative bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 md:p-12 shadow-card-hover border border-slate-200/50 overflow-hidden">
-            {/* Decorative gradient */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-primary/10 rounded-full blur-3xl"></div>
+          <div className="relative bg-white rounded-2xl p-8 md:p-12 shadow-card-hover border border-slate-200/50 overflow-hidden">
+            {/* Decorative gradient with animation */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/10 to-ocean-blue/10 rounded-full blur-3xl animate-float-rotate" style={{ animationDelay: '1.5s' }}></div>
 
             <div className="relative max-w-2xl mx-auto">
               <div className="text-center mb-10">

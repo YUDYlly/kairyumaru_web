@@ -112,7 +112,7 @@ export default function Pricing() {
     <section id="pricing" className="relative pt-28 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-ocean-blue to-ocean-dark overflow-hidden">
       {/* Wave divider at top */}
       <div className="absolute top-0 left-0 w-full z-10 rotate-180 transform translate-y-[-1px]">
-        <WavyBorder fill="#f8fafc" />
+        <WavyBorder fill="#fdfbf7" />
       </div>
 
       {/* Decorative Elements */}
