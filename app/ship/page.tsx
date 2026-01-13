@@ -206,14 +206,14 @@ export default function ShipPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="/booking"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-blue hover:bg-sky-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 予約カレンダー
               </a>
 
               <a
                 href="/pricing"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-slate-300 bg-white text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 料金・プランを確認
               </a>

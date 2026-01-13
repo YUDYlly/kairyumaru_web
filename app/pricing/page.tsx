@@ -253,13 +253,13 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-pop-blue text-white font-bold text-lg rounded-lg hover:bg-sky-400 transition-all shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 お問い合わせ
               </a>
               <a
                 href="/booking"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-slate-300 text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif rounded-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif rounded-lg shadow-md hover:shadow-xl hover:scale-105"
               >
                 予約カレンダー
               </a>
@@ -282,13 +282,13 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="/booking"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-orange hover:bg-orange-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-accent-orange hover:bg-orange-600 text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 予約カレンダー
               </a>
               <a
                 href="/fishing-spots"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-slate-300 bg-white text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 釣り場を見る
               </a>

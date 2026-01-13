@@ -11,7 +11,7 @@ export default function SectionTitle({ icon, title, description }: SectionTitleP
     <div className="text-center mb-12">
       <div className="inline-flex items-center justify-center mb-4">
         <div className="text-silver mr-3">{icon}</div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-silver">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-silver">
           {title}
         </h2>
       </div>

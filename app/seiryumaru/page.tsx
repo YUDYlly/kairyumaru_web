@@ -65,7 +65,7 @@ export default function SeiryumaruPage() {
                 href="http://www.seiryumaru.com/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-pop-blue hover:bg-sky-400 text-white font-bold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -273,14 +273,14 @@ export default function SeiryumaruPage() {
                 href="http://www.seiryumaru.com/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-blue hover:bg-sky-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 星龍丸公式サイト
               </a>
 
               <a
                 href="tel:09097773355"
-                className="flex min-w-[260px] items-center justify-center gap-3 rounded-lg h-16 px-8 border-2 border-slate-300 bg-white text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif shadow-md"
+                className="flex min-w-[260px] items-center justify-center gap-3 rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
                 電話でお問い合わせ

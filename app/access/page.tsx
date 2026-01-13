@@ -104,7 +104,7 @@ export default function AccessPage() {
                     href={googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-pop-blue text-white font-bold rounded-lg hover:bg-sky-400 transition-all shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-ocean-blue hover:bg-ocean-dark text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
                   >
                     <ExternalLink className="w-5 h-5" />
                     Google Mapsで開く
@@ -151,10 +151,10 @@ export default function AccessPage() {
             <div className="h-px flex-1 bg-gradient-to-r from-pop-cyan/30 to-transparent mb-3"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             {/* By Car */}
-            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow hover:shadow-lg transition-all">
-              <div className="bg-gradient-to-r from-pop-blue to-pop-cyan p-6">
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow hover:shadow-lg transition-all flex flex-col">
+              <div className="bg-gradient-to-r from-ocean-blue to-ocean-light p-6">
                 <div className="flex items-center gap-3 text-white">
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <Car className="w-6 h-6" />
@@ -162,7 +162,7 @@ export default function AccessPage() {
                   <h4 className="text-2xl font-serif font-black">お車でお越しの方</h4>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-1 flex flex-col">
                 <div className="space-y-6">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
@@ -239,8 +239,8 @@ export default function AccessPage() {
             </div>
 
             {/* By Public Transport */}
-            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow hover:shadow-lg transition-all">
-              <div className="bg-gradient-to-r from-pop-cyan to-pop-yellow p-6">
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow hover:shadow-lg transition-all flex flex-col">
+              <div className="bg-gradient-to-r from-accent-gold to-accent-orange p-6">
                 <div className="flex items-center gap-3 text-white">
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <Train className="w-6 h-6" />
@@ -248,8 +248,8 @@ export default function AccessPage() {
                   <h4 className="text-2xl font-serif font-black">公共交通機関でお越しの方</h4>
                 </div>
               </div>
-              <div className="p-6">
-                <div className="space-y-6">
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="space-y-6 flex-1">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <h5 className="font-bold text-navy-deep">JR鹿児島本線「遠賀川駅」よりタクシー</h5>
@@ -299,9 +299,9 @@ export default function AccessPage() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-4 border border-pop-cyan/30">
+                  <div className="bg-gradient-to-br from-ocean-light/30 to-ocean-blue/10 rounded-lg p-4 border border-ocean-blue/30 mt-auto">
                     <div className="flex items-start gap-2">
-                      <Phone className="w-5 h-5 text-pop-cyan mt-0.5 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-ocean-blue mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
                         <p className="font-bold text-navy-deep mb-1">タクシー会社のご案内</p>
                         <p className="text-slate-700 text-xs leading-relaxed">
@@ -352,7 +352,7 @@ export default function AccessPage() {
               </p>
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-pop-blue text-white font-bold text-lg rounded-lg hover:bg-sky-400 transition-all shadow-xl"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
                 お問い合わせ
@@ -376,13 +376,13 @@ export default function AccessPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="/booking"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-pop-blue hover:bg-sky-400 text-white transition-all text-lg font-black tracking-wider shadow-xl"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 予約カレンダー
               </a>
               <a
                 href="/pricing"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-slate-300 bg-white text-navy-deep hover:bg-slate-50 transition-all text-lg font-bold font-serif"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 料金を見る
               </a>
