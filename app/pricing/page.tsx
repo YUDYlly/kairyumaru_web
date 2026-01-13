@@ -126,17 +126,17 @@ export default function PricingPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-orange text-xs font-mono font-bold tracking-widest rounded shadow-sm">
+              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-orange text-xs font-mono font-thin tracking-widest rounded shadow-sm">
                 PRICING PLANS
               </span>
               <span className="h-px w-20 bg-gradient-to-r from-pop-orange/50 to-transparent"></span>
             </div>
 
-            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-thin leading-tight tracking-tight drop-shadow-sm">
               料金のご案内
             </h1>
 
-            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-orange font-medium">
+            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-orange font-thin">
               多彩な釣法に対応した<strong className="text-navy-deep">明確な料金設定</strong>。<br className="hidden md:block"/>
               落し込み・タイ五目・夜焚きイカ・ジギング・タイラバなど、<br/>
               お客様のスタイルに合わせたプランをご用意しております。
@@ -160,10 +160,10 @@ export default function PricingPage() {
                     {/* Icon & Title */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
-                        <div className={`text-[10px] font-mono text-${plan.color} mb-2 tracking-widest bg-${plan.color}/10 inline-block px-2 py-0.5 rounded font-bold`}>
+                        <div className={`text-[10px] font-mono text-${plan.color} mb-2 tracking-widest bg-${plan.color}/10 inline-block px-2 py-0.5 rounded font-thin`}>
                           {plan.nameEn.toUpperCase()}
                         </div>
-                        <h3 className="text-2xl font-serif font-black text-navy-deep mb-2 group-hover:text-${plan.color} transition-colors">
+                        <h3 className="text-2xl font-serif font-thin text-navy-deep mb-2 group-hover:text-${plan.color} transition-colors">
                           {plan.name}
                         </h3>
                       </div>
@@ -174,7 +174,7 @@ export default function PricingPage() {
 
                     {/* Price */}
                     <div className="mb-4 pb-4 border-b border-slate-100">
-                      <div className="text-3xl font-mono font-black text-navy-deep mb-1">
+                      <div className="text-3xl font-mono font-thin text-navy-deep mb-1">
                         {plan.priceRange}
                       </div>
                       <p className="text-xs text-slate-500">{plan.description}</p>
@@ -189,7 +189,7 @@ export default function PricingPage() {
                         {plan.targetFish.map((fish, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-slate-100 text-navy-deep text-xs font-bold rounded border border-slate-200"
+                            className="px-2 py-1 bg-slate-100 text-navy-deep text-xs font-thin rounded border border-slate-200"
                           >
                             {fish}
                           </span>
@@ -200,7 +200,7 @@ export default function PricingPage() {
                     {/* Season */}
                     <div className="text-xs text-slate-500 mt-auto">
                       <span className="font-mono">シーズン:</span>{' '}
-                      <span className="font-bold text-navy-deep">{plan.season}</span>
+                      <span className="font-thin text-navy-deep">{plan.season}</span>
                     </div>
                   </div>
                 </div>
@@ -212,10 +212,10 @@ export default function PricingPage() {
         {/* Rental Section */}
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-12">
           <div className="flex items-end gap-4 mb-8">
-            <h3 className="text-3xl md:text-4xl font-serif font-black text-navy-deep">
+            <h3 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep">
               RENTAL
             </h3>
-            <span className="text-pop-blue font-mono text-sm font-bold mb-2 tracking-widest">
+            <span className="text-pop-blue font-mono text-sm font-thin mb-2 tracking-widest">
               // レンタル
             </span>
             <div className="h-px flex-1 bg-gradient-to-r from-pop-blue/30 to-transparent mb-3"></div>
@@ -228,8 +228,8 @@ export default function PricingPage() {
                 className="bg-white rounded-xl border border-slate-200 p-6 hover:border-pop-blue transition-all shadow hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h4 className="text-xl font-serif font-bold text-navy-deep">{item.name}</h4>
-                  <div className="text-2xl font-mono font-black text-pop-blue">{item.price}</div>
+                  <h4 className="text-xl font-serif font-thin text-navy-deep">{item.name}</h4>
+                  <div className="text-2xl font-mono font-thin text-pop-blue">{item.price}</div>
                 </div>
                 <p className="text-sm text-slate-500">{item.description}</p>
               </div>
@@ -241,7 +241,7 @@ export default function PricingPage() {
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20">
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-pop-cyan rounded-2xl p-8">
             <div className="text-center mb-8">
-              <h4 className="text-2xl font-serif font-bold text-navy-deep mb-3">
+              <h4 className="text-2xl font-serif font-thin text-navy-deep mb-3">
                 上記以外のコースも承ります
               </h4>
               <p className="text-slate-muted max-w-2xl mx-auto">
@@ -253,13 +253,13 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-thin text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 お問い合わせ
               </a>
               <a
                 href="/booking"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif rounded-lg shadow-md hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-lg font-thin font-serif rounded-lg shadow-md hover:shadow-xl hover:scale-105"
               >
                 予約カレンダー
               </a>
@@ -271,10 +271,10 @@ export default function PricingPage() {
         <div className="w-full relative py-24 bg-slate-100">
           <div className="max-w-[800px] mx-auto text-center flex flex-col items-center gap-8 px-4">
             <div>
-              <span className="text-pop-orange font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-bold">
+              <span className="text-pop-orange font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-thin">
                 Book Your Trip
               </span>
-              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-black">
+              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-thin">
                 お好みのスタイルで。
               </h2>
             </div>
@@ -282,13 +282,13 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="/booking"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-accent-orange hover:bg-orange-600 text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-accent-orange hover:bg-orange-600 text-white transition-all text-lg font-thin tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 予約カレンダー
               </a>
               <a
                 href="/fishing-spots"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-thin font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 釣り場を見る
               </a>

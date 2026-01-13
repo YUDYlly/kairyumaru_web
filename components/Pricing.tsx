@@ -204,7 +204,7 @@ export default function Pricing() {
                               {plan.targetFish.map((fish, idx) => (
                                 <span
                                   key={idx}
-                                  className="px-3 py-1 bg-gradient-to-r from-soft to-soft-dark text-navy-deep text-xs rounded-lg font-medium"
+                                  className="px-3 py-1 bg-gradient-to-r from-soft to-soft-dark text-navy-deep text-xs rounded-lg font-thin"
                                 >
                                   {fish}
                                 </span>
@@ -215,7 +215,7 @@ export default function Pricing() {
                           {/* Season */}
                           <div className="text-sm text-slate-muted">
                             <span>シーズン:</span>{' '}
-                            <span className="text-navy-deep font-semibold">{plan.season}</span>
+                            <span className="text-navy-deep font-thin">{plan.season}</span>
                           </div>
                         </div>
                       </div>
@@ -292,7 +292,7 @@ export default function Pricing() {
                           {plan.targetFish.map((fish, idx) => (
                             <span
                               key={idx}
-                              className="px-3 py-1.5 bg-gradient-to-r from-soft to-soft-dark text-navy-deep text-xs rounded-lg font-medium"
+                              className="px-3 py-1.5 bg-gradient-to-r from-soft to-soft-dark text-navy-deep text-xs rounded-lg font-thin"
                             >
                               {fish}
                             </span>
@@ -303,7 +303,7 @@ export default function Pricing() {
                       {/* Season */}
                       <div className="text-sm text-slate-muted">
                         <span>シーズン:</span>{' '}
-                        <span className="text-navy-deep font-semibold">{plan.season}</span>
+                        <span className="text-navy-deep font-thin">{plan.season}</span>
                       </div>
                     </div>
                   </div>
@@ -320,15 +320,15 @@ export default function Pricing() {
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6 drop-shadow">
+              <h3 className="text-2xl md:text-3xl font-serif font-thin text-white mb-6 drop-shadow">
                 レンタル・その他
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
                 <div className="text-sm text-white/95 bg-white/10 px-6 py-3 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-all duration-300">
-                  <span className="font-bold">電動リール＋ロッド:</span> ¥1,000～2,000
+                  <span className="font-thin">電動リール＋ロッド:</span> ¥1,000～2,000
                 </div>
                 <div className="text-sm text-white/95 bg-white/10 px-6 py-3 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-all duration-300">
-                  <span className="font-bold">仕掛け:</span> ¥500～
+                  <span className="font-thin">仕掛け:</span> ¥500～
                 </div>
               </div>
               <p className="text-sm md:text-base text-white/90 mb-4 leading-relaxed drop-shadow">

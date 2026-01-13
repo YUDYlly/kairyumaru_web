@@ -103,17 +103,17 @@ export default function BlogPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-orange text-xs font-mono font-bold tracking-widest rounded shadow-sm">
+              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-orange text-xs font-mono font-thin tracking-widest rounded shadow-sm">
                 FISHING BLOG
               </span>
               <span className="h-px w-20 bg-gradient-to-r from-pop-orange/50 to-transparent"></span>
             </div>
 
-            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-thin leading-tight tracking-tight drop-shadow-sm">
               釣果情報・お知らせ
             </h1>
 
-            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-orange font-medium">
+            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-orange font-thin">
               <strong className="text-navy-deep">釣果レポート</strong>、お知らせ、釣りのコツなど<br className="hidden md:block"/>
               海龍丸からの最新情報をお届けします。
             </p>
@@ -125,7 +125,7 @@ export default function BlogPage() {
           <div className="flex gap-3 border-b border-slate-200">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-6 py-3 font-bold text-sm transition-all relative ${
+              className={`px-6 py-3 font-thin text-sm transition-all relative ${
                 activeTab === 'all'
                   ? 'text-navy-deep border-b-2 border-navy-deep'
                   : 'text-slate-500 hover:text-navy-deep'
@@ -138,7 +138,7 @@ export default function BlogPage() {
             </button>
             <button
               onClick={() => setActiveTab('fishing-report')}
-              className={`px-6 py-3 font-bold text-sm transition-all relative ${
+              className={`px-6 py-3 font-thin text-sm transition-all relative ${
                 activeTab === 'fishing-report'
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-slate-500 hover:text-primary'
@@ -151,7 +151,7 @@ export default function BlogPage() {
             </button>
             <button
               onClick={() => setActiveTab('news')}
-              className={`px-6 py-3 font-bold text-sm transition-all relative ${
+              className={`px-6 py-3 font-thin text-sm transition-all relative ${
                 activeTab === 'news'
                   ? 'text-accent-orange border-b-2 border-accent-orange'
                   : 'text-slate-500 hover:text-accent-orange'
@@ -164,7 +164,7 @@ export default function BlogPage() {
             </button>
             <button
               onClick={() => setActiveTab('tips')}
-              className={`px-6 py-3 font-bold text-sm transition-all relative ${
+              className={`px-6 py-3 font-thin text-sm transition-all relative ${
                 activeTab === 'tips'
                   ? 'text-accent-yellow border-b-2 border-accent-yellow'
                   : 'text-slate-500 hover:text-accent-yellow'
@@ -215,7 +215,7 @@ export default function BlogPage() {
                       {/* Category Badge on Image */}
                       {category && (
                         <div className="absolute top-4 right-4">
-                          <span className={`${(categories[category] || defaultCategory).color} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                          <span className={`${(categories[category] || defaultCategory).color} text-white text-xs font-thin px-3 py-1 rounded-full`}>
                             {(categories[category] || defaultCategory).name}
                           </span>
                         </div>
@@ -223,7 +223,7 @@ export default function BlogPage() {
                       {/* Multiple Images Indicator */}
                       {post.images && post.images.length > 1 && (
                         <div className="absolute bottom-4 right-4">
-                          <span className="bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-full">
+                          <span className="bg-black/70 text-white text-xs font-thin px-2 py-1 rounded-full">
                             +{post.images.length - 1}
                           </span>
                         </div>
@@ -233,7 +233,7 @@ export default function BlogPage() {
 
                   <div className="p-6">
                     {/* Title */}
-                    <h2 className="text-xl font-bold text-navy-deep mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    <h2 className="text-xl font-thin text-navy-deep mb-3 group-hover:text-primary transition-colors line-clamp-2">
                       {post.title}
                     </h2>
 
@@ -246,7 +246,7 @@ export default function BlogPage() {
                               <Fish className="w-4 h-4 text-primary" />
                               <span className="font-mono text-xs">魚種</span>
                             </div>
-                            <span className="font-bold text-navy-deep">{post.fish}</span>
+                            <span className="font-thin text-navy-deep">{post.fish}</span>
                           </div>
                         )}
                         {post.weight && (
@@ -255,7 +255,7 @@ export default function BlogPage() {
                               <Trophy className="w-4 h-4 text-accent-orange" />
                               <span className="font-mono text-xs">重量</span>
                             </div>
-                            <span className="font-bold text-navy-deep">{post.weight}</span>
+                            <span className="font-thin text-navy-deep">{post.weight}</span>
                           </div>
                         )}
                         {post.count && (
@@ -264,7 +264,7 @@ export default function BlogPage() {
                               <Fish className="w-4 h-4 text-accent-yellow" />
                               <span className="font-mono text-xs">匹数</span>
                             </div>
-                            <span className="font-bold text-navy-deep">{post.count}匹</span>
+                            <span className="font-thin text-navy-deep">{post.count}匹</span>
                           </div>
                         )}
                         {post.location && (
@@ -273,7 +273,7 @@ export default function BlogPage() {
                               <Waves className="w-4 h-4 text-pop-cyan" />
                               <span className="font-mono text-xs">釣り場</span>
                             </div>
-                            <span className="font-bold text-navy-deep">{post.location}</span>
+                            <span className="font-thin text-navy-deep">{post.location}</span>
                           </div>
                         )}
                       </div>

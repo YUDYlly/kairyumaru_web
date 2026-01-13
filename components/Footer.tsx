@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Contact Info */}
           <div className="flex flex-col">
-            <h3 className="text-xl font-serif font-bold mb-6 text-white text-center">
+            <h3 className="text-xl font-serif font-thin mb-6 text-white text-center">
               お問い合わせ
             </h3>
             <div className="flex flex-col items-center text-center space-y-4">
@@ -22,7 +22,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5" />
                 <a
                   href="tel:09073837799"
-                  className="font-bold text-xl text-white/90 hover:text-white transition-colors"
+                  className="font-thin text-xl text-white/90 hover:text-white transition-colors"
                 >
                   090-7383-7799
                 </a>
@@ -43,13 +43,13 @@ export default function Footer() {
 
           {/* Access */}
           <div className="flex flex-col">
-            <h3 className="text-xl font-serif font-bold mb-6 text-white text-center">
+            <h3 className="text-xl font-serif font-thin mb-6 text-white text-center">
               アクセス
             </h3>
             <div className="flex flex-col items-center text-center space-y-3">
               <MapPin className="w-6 h-6" />
               <div>
-                <p className="text-white/90 font-bold text-base mb-1">
+                <p className="text-white/90 font-thin text-base mb-1">
                   福岡県遠賀郡芦屋町山鹿
                 </p>
                 <p className="text-white/70 text-base">
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Social Media */}
           <div className="flex flex-col">
-            <h3 className="text-xl font-serif font-bold mb-6 text-white text-center">
+            <h3 className="text-xl font-serif font-thin mb-6 text-white text-center">
               SNS
             </h3>
             <div className="flex flex-col items-center text-center space-y-3">
@@ -78,7 +78,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kairyumaru1802"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-white/90 hover:text-white transition-colors"
+                className="font-thin text-white/90 hover:text-white transition-colors"
               >
                 @kairyumaru1802
               </a>

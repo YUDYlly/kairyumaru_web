@@ -84,7 +84,7 @@ export default function ShipEquipment() {
                       <div className="w-10 h-10 rounded-lg bg-navy-deep text-white flex items-center justify-center flex-shrink-0">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <div className="text-sm font-medium text-slate-500">
+                      <div className="text-sm font-thin text-slate-500">
                         {spec.label}
                       </div>
                     </div>

@@ -86,17 +86,17 @@ export default function FishingSpotsPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-cyan text-xs font-mono font-bold tracking-widest rounded shadow-sm">
+              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-cyan text-xs font-mono font-thin tracking-widest rounded shadow-sm">
                 FISHING SPOTS
               </span>
               <span className="h-px w-20 bg-gradient-to-r from-pop-cyan/50 to-transparent"></span>
             </div>
 
-            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-thin leading-tight tracking-tight drop-shadow-sm">
               釣り場
             </h1>
 
-            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-cyan font-medium">
+            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-cyan font-thin">
               玄界灘の一級ポイントをご案内。<br className="hidden md:block"/>
               <strong className="text-navy-deep">高速船の機動力</strong>を活かした最適な釣り場で、<br/>
               快適な釣行をサポートします。
@@ -117,10 +117,10 @@ export default function FishingSpotsPage() {
                   {/* Icon & Title */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <div className="text-xs font-mono text-pop-cyan mb-2 uppercase font-bold">
+                      <div className="text-xs font-mono text-pop-cyan mb-2 uppercase font-thin">
                         {spot.nameEn}
                       </div>
-                      <h3 className="text-2xl font-serif font-black text-navy-deep mb-2">
+                      <h3 className="text-2xl font-serif font-thin text-navy-deep mb-2">
                         {spot.name}
                       </h3>
                     </div>
@@ -149,7 +149,7 @@ export default function FishingSpotsPage() {
                       {spot.targetFish.map((fish, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-slate-100 text-navy-deep text-xs font-bold rounded border border-slate-200"
+                          className="px-2 py-1 bg-slate-100 text-navy-deep text-xs font-thin rounded border border-slate-200"
                         >
                           {fish}
                         </span>
@@ -160,7 +160,7 @@ export default function FishingSpotsPage() {
                   {/* Season */}
                   <div className="text-xs text-slate-600">
                     <span className="font-mono">シーズン:</span>{' '}
-                    <span className="font-bold text-navy-deep">{spot.season}</span>
+                    <span className="font-thin text-navy-deep">{spot.season}</span>
                   </div>
                 </div>
               )
@@ -171,7 +171,7 @@ export default function FishingSpotsPage() {
         {/* Additional Info */}
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20">
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-8">
-            <h3 className="text-xl font-serif font-bold text-navy-deep mb-4 text-center">
+            <h3 className="text-xl font-serif font-thin text-navy-deep mb-4 text-center">
               釣り場について
             </h3>
             <div className="space-y-3 text-sm text-slate-600 max-w-3xl mx-auto">
@@ -192,22 +192,22 @@ export default function FishingSpotsPage() {
         {/* CTA Section */}
         <div className="w-full bg-gradient-to-br from-soft-light to-accent-yellowLight py-16">
           <div className="max-w-[800px] mx-auto text-center px-4">
-            <h2 className="text-3xl md:text-4xl font-serif font-black text-navy-deep mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep mb-6">
               ご予約・お問い合わせ
             </h2>
-            <p className="text-slate-text mb-8 font-bold">
+            <p className="text-slate-text mb-8 font-thin">
               釣り場の詳細やご不明な点は、お気軽にお問い合わせください
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center justify-center px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-black text-lg rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-105 min-w-[260px]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-thin text-lg rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-105 min-w-[260px]"
               >
                 電話で問い合わせ
               </a>
               <a
                 href="/booking"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif rounded-xl min-w-[260px] shadow-md hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-lg font-thin font-serif rounded-xl min-w-[260px] shadow-md hover:shadow-xl hover:scale-105"
               >
                 予約カレンダー
               </a>

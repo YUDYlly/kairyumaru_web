@@ -108,7 +108,7 @@ function ImageGallery({ images }: { images: Array<{ url: string; width?: number;
 
         {/* Image Counter */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm font-bold px-3 py-1 rounded-full">
+          <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm font-thin px-3 py-1 rounded-full">
             {currentIndex + 1} / {images.length}
           </div>
         )}
@@ -199,14 +199,14 @@ export default function BlogPostPage({ params }: PageProps) {
               const categoryKey = Array.isArray(post.category) ? post.category[0] : post.category
               const categoryData = categories[categoryKey] || defaultCategory
               return (
-                <span className={`${categoryData.color} text-white text-sm font-bold px-4 py-2 rounded-full`}>
+                <span className={`${categoryData.color} text-white text-sm font-thin px-4 py-2 rounded-full`}>
                   {categoryData.name}
                 </span>
               )
             })()}
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-serif font-thin mb-4">
             {post.title}
           </h1>
 
@@ -251,11 +251,11 @@ export default function BlogPostPage({ params }: PageProps) {
               className="whitespace-pre-wrap text-text-light leading-relaxed"
               dangerouslySetInnerHTML={{
                 __html: post.content
-                  .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold text-text mb-4 mt-8">$1</h1>')
-                  .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold text-text mb-3 mt-6">$2</h2>')
-                  .replace(/^### (.+)$/gm, '<h3 class="text-xl font-bold text-text mb-2 mt-4">$3</h3>')
+                  .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-thin text-text mb-4 mt-8">$1</h1>')
+                  .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-thin text-text mb-3 mt-6">$2</h2>')
+                  .replace(/^### (.+)$/gm, '<h3 class="text-xl font-thin text-text mb-2 mt-4">$3</h3>')
                   .replace(/^- (.+)$/gm, '<li class="ml-4">$1</li>')
-                  .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-text">$1</strong>')
+                  .replace(/\*\*(.+?)\*\*/g, '<strong class="font-thin text-text">$1</strong>')
               }}
             />
           </div>
@@ -265,7 +265,7 @@ export default function BlogPostPage({ params }: PageProps) {
         <div className="mt-12 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-thin rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <ArrowLeft className="w-5 h-5" />
             ブログ一覧に戻る

@@ -24,17 +24,17 @@ export default function AccessPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-blue text-xs font-mono font-bold tracking-widest rounded shadow-sm">
+              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-blue text-xs font-mono font-thin tracking-widest rounded shadow-sm">
                 ACCESS & LOCATION
               </span>
               <span className="h-px w-20 bg-gradient-to-r from-pop-blue/50 to-transparent"></span>
             </div>
 
-            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-thin leading-tight tracking-tight drop-shadow-sm">
               アクセス・乗船場所のご案内
             </h1>
 
-            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-blue font-medium">
+            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-blue font-thin">
               <strong className="text-navy-deep">芦屋柏原漁港</strong>を拠点に、玄界灘へ出航。<br className="hidden md:block"/>
               福岡市内から車で約60分、アクセス良好な立地です。<br/>
               駐車場完備で、お車でのご来港も安心です。
@@ -68,7 +68,7 @@ export default function AccessPage() {
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-serif font-black text-navy-deep">
+                      <h2 className="text-2xl font-serif font-thin text-navy-deep">
                         {portName}
                       </h2>
                       <p className="text-sm text-slate-500 font-mono">ASHIYA KASHIWABARA PORT</p>
@@ -79,7 +79,7 @@ export default function AccessPage() {
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-pop-blue mt-1 flex-shrink-0" />
                       <div>
-                        <p className="text-navy-deep font-bold">{address}</p>
+                        <p className="text-navy-deep font-thin">{address}</p>
                         <p className="text-sm text-slate-500">{portName}</p>
                       </div>
                     </div>
@@ -88,7 +88,7 @@ export default function AccessPage() {
                       <div>
                         <a
                           href="tel:09073837799"
-                          className="text-navy-deep font-bold hover:text-pop-blue transition-colors"
+                          className="text-navy-deep font-thin hover:text-pop-blue transition-colors"
                         >
                           090-7383-7799
                         </a>
@@ -104,7 +104,7 @@ export default function AccessPage() {
                     href={googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-ocean-blue hover:bg-ocean-dark text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-ocean-blue hover:bg-ocean-dark text-white font-thin rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
                   >
                     <ExternalLink className="w-5 h-5" />
                     Google Mapsで開く
@@ -115,20 +115,20 @@ export default function AccessPage() {
                 <div className="w-full md:w-auto bg-slate-50 rounded-xl p-6 border border-slate-200">
                   <div className="flex items-center gap-2 mb-4">
                     <Navigation className="w-5 h-5 text-pop-orange" />
-                    <h3 className="font-serif font-bold text-navy-deep">所要時間</h3>
+                    <h3 className="font-serif font-thin text-navy-deep">所要時間</h3>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <Car className="w-5 h-5 text-slate-400" />
                       <div className="text-sm">
-                        <p className="font-bold text-navy-deep">福岡市内から</p>
+                        <p className="font-thin text-navy-deep">福岡市内から</p>
                         <p className="text-slate-500">車で約60分</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Car className="w-5 h-5 text-slate-400" />
                       <div className="text-sm">
-                        <p className="font-bold text-navy-deep">北九州市内から</p>
+                        <p className="font-thin text-navy-deep">北九州市内から</p>
                         <p className="text-slate-500">車で約40分</p>
                       </div>
                     </div>
@@ -142,10 +142,10 @@ export default function AccessPage() {
         {/* Access Methods */}
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-12">
           <div className="flex items-end gap-4 mb-8">
-            <h3 className="text-3xl md:text-4xl font-serif font-black text-navy-deep">
+            <h3 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep">
               ACCESS
             </h3>
-            <span className="text-pop-cyan font-mono text-sm font-bold mb-2 tracking-widest">
+            <span className="text-pop-cyan font-mono text-sm font-thin mb-2 tracking-widest">
               // アクセス方法
             </span>
             <div className="h-px flex-1 bg-gradient-to-r from-pop-cyan/30 to-transparent mb-3"></div>
@@ -159,29 +159,29 @@ export default function AccessPage() {
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <Car className="w-6 h-6" />
                   </div>
-                  <h4 className="text-2xl font-serif font-black">お車でお越しの方</h4>
+                  <h4 className="text-2xl font-serif font-thin">お車でお越しの方</h4>
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="space-y-6">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <h5 className="font-bold text-navy-deep">福岡方面より</h5>
-                      <span className="text-xs bg-pop-blue/10 text-pop-blue px-2 py-0.5 rounded-full font-bold">
+                      <h5 className="font-thin text-navy-deep">福岡方面より</h5>
+                      <span className="text-xs bg-pop-blue/10 text-pop-blue px-2 py-0.5 rounded-full font-thin">
                         所要時間：約60分
                       </span>
                     </div>
                     <ol className="space-y-2 text-sm text-slate-600">
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-bold mt-0.5">1</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-thin mt-0.5">1</span>
                         <span>福岡都市高速から国道3号線（北九州方面）へ</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-bold mt-0.5">2</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-thin mt-0.5">2</span>
                         <span>岡垣バイパスを進み、「今川」交差点付近から県道74号線を芦屋・柏原方面へ北上</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-bold mt-0.5">3</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-blue/10 text-pop-blue flex items-center justify-center text-xs font-thin mt-0.5">3</span>
                         <span>案内板に従い芦屋柏原漁港へ</span>
                       </li>
                     </ol>
@@ -191,22 +191,22 @@ export default function AccessPage() {
 
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <h5 className="font-bold text-navy-deep">北九州方面より</h5>
-                      <span className="text-xs bg-pop-cyan/10 text-pop-cyan px-2 py-0.5 rounded-full font-bold">
+                      <h5 className="font-thin text-navy-deep">北九州方面より</h5>
+                      <span className="text-xs bg-pop-cyan/10 text-pop-cyan px-2 py-0.5 rounded-full font-thin">
                         所要時間：約40分
                       </span>
                     </div>
                     <ol className="space-y-2 text-sm text-slate-600">
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-bold mt-0.5">1</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-thin mt-0.5">1</span>
                         <span>国道3号線を福岡方面へ進む</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-bold mt-0.5">2</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-thin mt-0.5">2</span>
                         <span>遠賀川付近の接続から県道74号線に入り、芦屋町山鹿・柏原方面へ</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-bold mt-0.5">3</span>
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-pop-cyan/10 text-pop-cyan flex items-center justify-center text-xs font-thin mt-0.5">3</span>
                         <span>芦屋柏原漁港に到着</span>
                       </li>
                     </ol>
@@ -216,20 +216,20 @@ export default function AccessPage() {
                     <div className="flex items-start gap-2 mb-3">
                       <Navigation className="w-5 h-5 text-pop-blue mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-bold text-navy-deep text-sm mb-1">ナビ設定のポイント</p>
+                        <p className="font-thin text-navy-deep text-sm mb-1">ナビ設定のポイント</p>
                         <p className="text-xs text-slate-600 mb-2">カーナビやGoogleマップをご利用の際は、以下の地点を目印に設定してください。</p>
                       </div>
                     </div>
                     <div className="space-y-2 pl-7">
                       <div className="text-sm">
-                        <p className="font-bold text-navy-deep mb-1">目的地：</p>
+                        <p className="font-thin text-navy-deep mb-1">目的地：</p>
                         <p className="text-slate-700 leading-relaxed">
-                          <span className="font-bold">柏原漁業協同組合</span><br />
+                          <span className="font-thin">柏原漁業協同組合</span><br />
                           <span className="text-xs text-slate-600">（福岡県遠賀郡芦屋町大字柏原285）</span>
                         </p>
                       </div>
                       <div className="text-sm">
-                        <p className="font-bold text-navy-deep mb-1">駐車場：</p>
+                        <p className="font-thin text-navy-deep mb-1">駐車場：</p>
                         <p className="text-slate-700 text-xs">港内の無料駐車場をご利用いただけます。</p>
                       </div>
                     </div>
@@ -245,15 +245,15 @@ export default function AccessPage() {
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <Train className="w-6 h-6" />
                   </div>
-                  <h4 className="text-2xl font-serif font-black">公共交通機関でお越しの方</h4>
+                  <h4 className="text-2xl font-serif font-thin">公共交通機関でお越しの方</h4>
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="space-y-6 flex-1">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <h5 className="font-bold text-navy-deep">JR鹿児島本線「遠賀川駅」よりタクシー</h5>
-                      <span className="text-xs bg-pop-orange/10 text-pop-orange px-2 py-0.5 rounded-full font-bold">
+                      <h5 className="font-thin text-navy-deep">JR鹿児島本線「遠賀川駅」よりタクシー</h5>
+                      <span className="text-xs bg-pop-orange/10 text-pop-orange px-2 py-0.5 rounded-full font-thin">
                         推奨
                       </span>
                     </div>
@@ -264,9 +264,9 @@ export default function AccessPage() {
                       <div className="flex items-start gap-2">
                         <Clock className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                         <div className="text-sm">
-                          <p className="font-bold text-amber-900 mb-1">早朝便ご利用の方へ</p>
+                          <p className="font-thin text-amber-900 mb-1">早朝便ご利用の方へ</p>
                           <p className="text-amber-800 leading-relaxed">
-                            午前便ご利用の場合、バスの始発前となるため<span className="font-bold">タクシーが唯一の手段</span>となります。早朝は台数が限られるため、タクシー会社（芦屋タクシー等）への<span className="font-bold">事前予約を強くお勧めします。</span>
+                            午前便ご利用の場合、バスの始発前となるため<span className="font-thin">タクシーが唯一の手段</span>となります。早朝は台数が限られるため、タクシー会社（芦屋タクシー等）への<span className="font-thin">事前予約を強くお勧めします。</span>
                           </p>
                         </div>
                       </div>
@@ -277,15 +277,15 @@ export default function AccessPage() {
 
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <h5 className="font-bold text-navy-deep">バスをご利用の場合</h5>
-                      <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-bold">
+                      <h5 className="font-thin text-navy-deep">バスをご利用の場合</h5>
+                      <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-thin">
                         帰路・午後便向け
                       </span>
                     </div>
                     <div className="space-y-3">
                       <div className="text-sm">
                         <p className="text-slate-700 mb-2">
-                          <span className="font-bold text-navy-deep">芦屋タウンバス</span>「柏原」バス停下車、徒歩約5分。
+                          <span className="font-thin text-navy-deep">芦屋タウンバス</span>「柏原」バス停下車、徒歩約5分。
                         </p>
                         <p className="text-xs text-slate-600 leading-relaxed">
                           「遠賀川駅」または「折尾駅」方面からの路線がございます。
@@ -293,7 +293,7 @@ export default function AccessPage() {
                       </div>
                       <div className="bg-slate-50 border border-slate-200 rounded-lg p-3">
                         <p className="text-xs text-slate-700 leading-relaxed">
-                          <span className="font-bold text-navy-deep">※</span> 運行本数が少ないため、事前に最新の時刻表をご確認ください。
+                          <span className="font-thin text-navy-deep">※</span> 運行本数が少ないため、事前に最新の時刻表をご確認ください。
                         </p>
                       </div>
                     </div>
@@ -303,7 +303,7 @@ export default function AccessPage() {
                     <div className="flex items-start gap-2">
                       <Phone className="w-5 h-5 text-ocean-blue mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="font-bold text-navy-deep mb-1">タクシー会社のご案内</p>
+                        <p className="font-thin text-navy-deep mb-1">タクシー会社のご案内</p>
                         <p className="text-slate-700 text-xs leading-relaxed">
                           早朝のご予約は「芦屋タクシー」などの地元タクシー会社がおすすめです。事前にお問い合わせください。
                         </p>
@@ -320,7 +320,7 @@ export default function AccessPage() {
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20">
           <div className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-pop-blue rounded-2xl p-8">
             <div className="text-center mb-6">
-              <h4 className="text-2xl font-serif font-bold text-navy-deep mb-3">
+              <h4 className="text-2xl font-serif font-thin text-navy-deep mb-3">
                 港施設のご案内
               </h4>
               <p className="text-slate-muted max-w-2xl mx-auto">
@@ -331,17 +331,17 @@ export default function AccessPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="bg-white rounded-lg p-5 text-center border border-slate-200">
                 <div className="text-3xl mb-2">🚻</div>
-                <h5 className="font-bold text-navy-deep mb-1">トイレ完備</h5>
+                <h5 className="font-thin text-navy-deep mb-1">トイレ完備</h5>
                 <p className="text-xs text-slate-500">清潔なトイレ設備</p>
               </div>
               <div className="bg-white rounded-lg p-5 text-center border border-slate-200">
                 <div className="text-3xl mb-2">🅿️</div>
-                <h5 className="font-bold text-navy-deep mb-1">駐車場無料</h5>
+                <h5 className="font-thin text-navy-deep mb-1">駐車場無料</h5>
                 <p className="text-xs text-slate-500">漁港敷地内に完備</p>
               </div>
               <div className="bg-white rounded-lg p-5 text-center border border-slate-200">
                 <div className="text-3xl mb-2">🧊</div>
-                <h5 className="font-bold text-navy-deep mb-1">氷・エサ</h5>
+                <h5 className="font-thin text-navy-deep mb-1">氷・エサ</h5>
                 <p className="text-xs text-slate-500">現地で購入可能</p>
               </div>
             </div>
@@ -352,7 +352,7 @@ export default function AccessPage() {
               </p>
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-thin text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
                 お問い合わせ
@@ -365,10 +365,10 @@ export default function AccessPage() {
         <div className="w-full relative py-24 bg-slate-100">
           <div className="max-w-[800px] mx-auto text-center flex flex-col items-center gap-8 px-4">
             <div>
-              <span className="text-pop-blue font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-bold">
+              <span className="text-pop-blue font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-thin">
                 Find Your Way
               </span>
-              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-black">
+              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-thin">
                 お待ちしております。
               </h2>
             </div>
@@ -376,13 +376,13 @@ export default function AccessPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="/booking"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-thin tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 予約カレンダー
               </a>
               <a
                 href="/pricing"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-thin font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 料金を見る
               </a>

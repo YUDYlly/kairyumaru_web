@@ -85,7 +85,7 @@ export default function BookingCalendar() {
                 <p className="text-sm text-slate-muted mb-2">メールでのお問い合わせ</p>
                 <a
                   href="mailto:kairyumaru1111@gmail.com"
-                  className="text-ocean-blue font-medium hover:underline transition-colors"
+                  className="text-ocean-blue font-thin hover:underline transition-colors"
                 >
                   kairyumaru1111@gmail.com
                 </a>

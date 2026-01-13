@@ -40,7 +40,7 @@
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-primary to-primary-light text-white font-bold rounded-xl transition-all duration-300 hover:shadow-[0_8px_30px_rgba(26, 58, 92, 0.4)] hover:scale-105 hover:-translate-y-0.5;
+    @apply px-8 py-4 bg-gradient-to-r from-primary to-primary-light text-white font-thin rounded-xl transition-all duration-300 hover:shadow-[0_8px_30px_rgba(26, 58, 92, 0.4)] hover:scale-105 hover:-translate-y-0.5;
     background-size: 200% 100%;
     background-position: left;
   }
@@ -50,7 +50,7 @@
   }
 
   .btn-secondary {
-    @apply px-8 py-4 bg-white/95 backdrop-blur-sm border-2 border-primary text-primary font-bold rounded-xl transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-[0_8px_30px_rgba(26, 58, 92, 0.3)] hover:scale-105 hover:-translate-y-0.5;
+    @apply px-8 py-4 bg-white/95 backdrop-blur-sm border-2 border-primary text-primary font-thin rounded-xl transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-[0_8px_30px_rgba(26, 58, 92, 0.3)] hover:scale-105 hover:-translate-y-0.5;
   }
 
   .section-container {
@@ -75,7 +75,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-light text-center mb-6;
+    @apply text-3xl md:text-4xl lg:text-5xl font-thin text-center mb-6;
     background: linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 50%, #1a3a5c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

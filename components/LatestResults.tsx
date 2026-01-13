@@ -85,7 +85,7 @@ export default function LatestResults() {
               <div className="flex items-center justify-between mb-4 pb-4 border-b border-soft-dark">
                 <div className="flex items-center text-text-light">
                   <Calendar className="w-4 h-4 mr-2 text-accent-orange" />
-                  <span className="text-sm font-medium">{result.date}</span>
+                  <span className="text-sm font-thin">{result.date}</span>
                 </div>
               </div>
 
@@ -95,7 +95,7 @@ export default function LatestResults() {
                 </h3>
                 <div className="flex items-center text-text-light">
                   <Ruler className="w-4 h-4 mr-2 text-accent-yellow" />
-                  <span className="font-medium">{result.size}</span>
+                  <span className="font-thin">{result.size}</span>
                 </div>
               </div>
 

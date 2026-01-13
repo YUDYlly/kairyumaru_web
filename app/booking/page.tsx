@@ -19,17 +19,17 @@ export default function BookingPage() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-blue text-xs font-mono font-bold tracking-widest rounded shadow-sm">
+              <span className="px-2 py-1 bg-white border border-slate-200 text-pop-blue text-xs font-mono font-thin tracking-widest rounded shadow-sm">
                 BOOKING STATUS
               </span>
               <span className="h-px w-20 bg-gradient-to-r from-pop-blue/50 to-transparent"></span>
             </div>
 
-            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-black leading-tight tracking-tight drop-shadow-sm">
+            <h1 className="text-navy-deep text-4xl md:text-6xl font-serif font-thin leading-tight tracking-tight drop-shadow-sm">
               予約状況
             </h1>
 
-            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-blue font-medium">
+            <p className="text-slate-muted mt-4 max-w-3xl text-sm md:text-base leading-relaxed pl-6 border-l-4 border-pop-blue font-thin">
               海龍丸の<strong className="text-navy-deep">予約状況</strong>を確認。<br className="hidden md:block"/>
               ご希望の日程の空き状況をチェックしてご予約ください。
             </p>
@@ -44,7 +44,7 @@ export default function BookingPage() {
                 <Calendar className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-serif font-bold text-xl text-navy-deep">
+                <h3 className="font-serif font-thin text-xl text-navy-deep">
                   予約カレンダー
                 </h3>
                 <p className="text-sm text-slate-500 font-mono">
@@ -75,7 +75,7 @@ export default function BookingPage() {
             <div className="flex items-start gap-3 mb-6">
               <Info className="w-5 h-5 text-pop-blue mt-0.5" />
               <div>
-                <h4 className="font-bold text-navy-deep text-lg mb-4">ご予約について</h4>
+                <h4 className="font-thin text-navy-deep text-lg mb-4">ご予約について</h4>
                 <div className="text-sm text-slate-600 space-y-3">
                   <p>
                     ・ご予約は<strong>お電話</strong>にて承っております。空き状況をご確認の上、お気軽にお問い合わせください。
@@ -96,7 +96,7 @@ export default function BookingPage() {
             <div className="mt-8 pt-6 border-t border-slate-200 text-center">
               <a
                 href="tel:09073837799"
-                className="inline-flex items-center justify-center px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-bold text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 bg-ocean-blue hover:bg-ocean-dark text-white font-thin text-lg rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 電話で予約する
               </a>
@@ -108,10 +108,10 @@ export default function BookingPage() {
         <div className="w-full relative py-24 bg-slate-100">
           <div className="max-w-[800px] mx-auto text-center flex flex-col items-center gap-8 px-4">
             <div>
-              <span className="text-pop-blue font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-bold">
+              <span className="text-pop-blue font-mono text-sm tracking-[0.5em] uppercase block mb-4 font-thin">
                 Reserve Your Spot
               </span>
-              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-black">
+              <h2 className="text-navy-deep text-4xl md:text-5xl font-serif font-thin">
                 今すぐご予約を
               </h2>
             </div>
@@ -119,14 +119,14 @@ export default function BookingPage() {
             <div className="flex flex-col sm:flex-row gap-6 w-full justify-center pt-8">
               <a
                 href="tel:09073837799"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-black tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 bg-ocean-blue hover:bg-ocean-dark text-white transition-all text-lg font-thin tracking-wider shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 090-7383-7799
               </a>
 
               <a
                 href="/fishing-spots"
-                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-bold font-serif shadow-md hover:shadow-xl hover:scale-105"
+                className="flex min-w-[260px] items-center justify-center rounded-lg h-16 px-8 border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white transition-all text-lg font-thin font-serif shadow-md hover:shadow-xl hover:scale-105"
               >
                 釣り場を見る
               </a>

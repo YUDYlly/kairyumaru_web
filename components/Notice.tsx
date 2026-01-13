@@ -12,7 +12,7 @@ export default function Notice() {
             <h3 className="text-xl font-thin text-navy-deep mb-2">
               お客様へお願い
             </h3>
-            <p className="text-slate-600 font-medium">
+            <p className="text-slate-600 font-thin">
               ごみは各自お持ち帰り下さい。
             </p>
           </div>

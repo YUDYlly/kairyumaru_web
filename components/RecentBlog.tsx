@@ -68,7 +68,7 @@ export default async function RecentBlog() {
                 {/* Multiple Images Indicator */}
                 {post.images && post.images.length > 1 && (
                   <div className="absolute bottom-3 right-3">
-                    <span className="bg-navy-deep/80 text-white text-xs font-medium px-2 py-1 rounded-md">
+                    <span className="bg-navy-deep/80 text-white text-xs font-thin px-2 py-1 rounded-md">
                       +{post.images.length - 1}
                     </span>
                   </div>
@@ -82,7 +82,7 @@ export default async function RecentBlog() {
                   const categoryKey = Array.isArray(post.category) ? post.category[0] : post.category
                   const categoryData = categories[categoryKey] || defaultCategory
                   return (
-                    <span className={`${categoryData.color} text-white text-xs font-medium px-2 py-1 rounded-md`}>
+                    <span className={`${categoryData.color} text-white text-xs font-thin px-2 py-1 rounded-md`}>
                       {categoryData.name}
                     </span>
                   )

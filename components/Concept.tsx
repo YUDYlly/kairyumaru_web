@@ -7,7 +7,7 @@ export default function Concept() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-deep mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-thin text-navy-deep mb-4">
               コンセプト
             </h2>
             <p className="text-lg text-slate-600">
@@ -47,7 +47,7 @@ export default function Concept() {
         {/* 2-Ship System */}
         <ScrollAnimation delay={300}>
           <div className="bg-white border border-slate-200 p-8 rounded-lg shadow-lg">
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-navy-deep mb-4 text-center">
+            <h3 className="text-xl md:text-2xl font-serif font-thin text-navy-deep mb-4 text-center">
               「星龍丸」との2艇体制
             </h3>
             <p className="text-base text-slate-600 text-center max-w-3xl mx-auto">
@@ -61,7 +61,7 @@ export default function Concept() {
         </ScrollAnimation>
 
         <ScrollAnimation delay={400}>
-          <p className="text-base md:text-lg font-bold text-navy-deep mt-12 text-center">
+          <p className="text-base md:text-lg font-thin text-navy-deep mt-12 text-center">
             その一投に、経験と技術を。それが海龍丸の釣りです。
           </p>
         </ScrollAnimation>

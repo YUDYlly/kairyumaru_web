@@ -54,7 +54,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-label={`${item.label}セクションへ移動`}
-                className="text-navy-deep hover:text-ocean-blue transition-colors duration-200 font-medium text-sm"
+                className="text-navy-deep hover:text-ocean-blue transition-colors duration-200 font-thin text-sm"
               >
                 {item.label}
               </a>
@@ -70,7 +70,7 @@ export default function Header() {
               aria-label="電話で予約"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-bold">090-7383-7799</span>
+              <span className="font-thin">090-7383-7799</span>
             </a>
 
             {/* Mobile Menu Button */}
@@ -98,7 +98,7 @@ export default function Header() {
               aria-label="電話で予約"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-bold">090-7383-7799</span>
+              <span className="font-thin">090-7383-7799</span>
             </a>
 
             <div className="flex flex-col space-y-1">
@@ -107,7 +107,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   aria-label={`${item.label}セクションへ移動`}
-                  className="text-navy-deep hover:text-ocean-blue hover:bg-soft-light transition-all duration-200 font-medium px-4 py-3 rounded-lg mx-2"
+                  className="text-navy-deep hover:text-ocean-blue hover:bg-soft-light transition-all duration-200 font-thin px-4 py-3 rounded-lg mx-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}

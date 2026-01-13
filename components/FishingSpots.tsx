@@ -144,7 +144,7 @@ export default function FishingSpots() {
                         {spot.targetFish.map((fish, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-white/20 text-white text-xs font-bold rounded"
+                            className="px-2 py-1 bg-white/20 text-white text-xs font-thin rounded"
                           >
                             {fish}
                           </span>
@@ -200,13 +200,13 @@ export default function FishingSpots() {
                   </div>
                   <div className="flex items-center gap-2 mb-4 text-white/90">
                     <MapPin className="w-5 h-5 text-accent-gold" />
-                    <span className="font-medium">港から {spot.distance}</span>
+                    <span className="font-thin">港から {spot.distance}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {spot.targetFish.map((fish, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-lg border border-white/10"
+                        className="px-3 py-1 bg-white/20 text-white text-xs font-thin rounded-lg border border-white/10"
                       >
                         {fish}
                       </span>
