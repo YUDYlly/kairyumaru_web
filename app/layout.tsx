@@ -7,6 +7,7 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-sans',
+  preload: false,
 })
 
 const notoSerifJP = Noto_Serif_JP({
@@ -14,6 +15,7 @@ const notoSerifJP = Noto_Serif_JP({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-serif',
+  preload: false,
 })
 
 export const metadata: Metadata = {
