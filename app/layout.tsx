@@ -91,6 +91,11 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${notoSansJP.variable} ${notoSerifJP.variable}`}>
       <head>
+        {/* Typekit preconnect for faster font loading */}
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+        {/* Typekit CSS - synchronous load for initial render */}
+        <link rel="stylesheet" href="https://use.typekit.net/hdf7hnv.css" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
