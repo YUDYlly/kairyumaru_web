@@ -4,7 +4,6 @@ import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({
   weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-sans',
   preload: false,
@@ -12,7 +11,6 @@ const notoSansJP = Noto_Sans_JP({
 
 const notoSerifJP = Noto_Serif_JP({
   weight: ['400', '600', '700'],
-  subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-serif',
   preload: false,
@@ -93,11 +91,21 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${notoSansJP.variable} ${notoSerifJP.variable}`}>
       <head>
-        {/* Typekit preconnect for faster font loading */}
-        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
-        {/* Typekit CSS - synchronous load for initial render */}
-        <link rel="stylesheet" href="https://use.typekit.net/hdf7hnv.css" />
+        {/* Adobe Fonts (Typekit) - JavaScript embed as required */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d) {
+                var config = {
+                  kitId: 'hdf7hnv',
+                  scriptTimeout: 3000,
+                  async: true
+                },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\\bwf-loading\\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+              })(document);
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
