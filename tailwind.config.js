@@ -46,8 +46,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['ruika', 'var(--font-noto-serif)', '"Noto Serif JP"', 'serif'],
-        sans: ['ruika', 'var(--font-noto-sans)', '"Noto Sans JP"', 'sans-serif'],
+        serif: ['var(--font-noto-serif)', '"Noto Serif JP"', 'serif'],
+        sans: ['var(--font-noto-sans)', '"Noto Sans JP"', 'sans-serif'],
       },
       borderRadius: {
         'lg': '1rem',    // 16px
